@@ -24,9 +24,9 @@ import java.io.IOException
  * 
  * This version uses:
  * - Smaller problem sizes
- * - Sequential evaluation instead of Spark for initial testing
  * - Reduced memory footprint
  * - Simple constraint handling
+ * - Can use existing SparkSession or create its own
  */
 object SimpleCampaignOptimizer {
   
@@ -38,7 +38,7 @@ object SimpleCampaignOptimizer {
     Try {
       if (useSparkMode) {
         println("Running with Spark support...")
-        runSparkOptimization()
+        runSparkOptimizationStandalone()
       } else {
         println("Running without Spark (pure jMetal)...")
         runSimpleOptimization()
@@ -55,141 +55,158 @@ object SimpleCampaignOptimizer {
     }
   }
   
-  def runSparkOptimization(): Unit = {
+  /**
+   * Standalone method that creates its own Spark session
+   * Only use this for standalone applications
+   */
+  def runSparkOptimizationStandalone(): Unit = {
     
     // Auto-detect Spark master
     println("Auto-detecting Spark master...")
     val detectedMaster = detectSparkMaster()
     
     // Create single Spark session for the entire optimization
-    val spark: SparkSession = {
-      val builder = SparkSession.builder()
-        .master(detectedMaster)
-        .appName("Simple Campaign Scheduling Optimizer")
-        // Add Java compatibility configurations
-        .config("spark.sql.adaptive.enabled", "false") // Disable adaptive query execution for compatibility
-        .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-        .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse") // Set warehouse directory
-      
-      // Try to enable Hive support if available, otherwise continue without it
-      val finalBuilder = Try {
-        builder
-          .config("spark.hadoop.metastore.catalog.default","hive")
-          .enableHiveSupport()
-      } match {
-        case Success(hiveBuilder) =>
-          println("  Hive support enabled")
-          hiveBuilder
-        case Failure(exception) =>
-          println(s"  Hive support not available: ${exception.getMessage}")
-          println("  Continuing without Hive support...")
-          builder
-      }
-      
-      Try {
-        finalBuilder.getOrCreate()
-      } match {
-        case Success(sparkSession) =>
-          println("  Spark session created successfully")
-          sparkSession
-        case Failure(exception) =>
-          println(s"  Failed to create Spark session: ${exception.getMessage}")
-          println("  This might be a Java version compatibility issue.")
-          println("  Try running with Java 8 or 11 for better Spark 3.1.3 compatibility.")
-          throw exception
-      }
-    }
-
-    val sc = spark.sparkContext
+    val spark: SparkSession = createSparkSession(detectedMaster)
     
     try {
-      // Simple configuration for testing
-      val numCustomers = 100      // Much smaller for testing
-      val populationSize = 20
-      val maxEvaluations = 500
-      val maxCustomersPerHour = 50
-      val campaignBudget = 5000.0
-      
-      println(s"Configuration:")
-      println(s"  Customers: $numCustomers")
-      println(s"  Population size: $populationSize")
-      println(s"  Max evaluations: $maxEvaluations")
-      println(s"  Max customers/hour: $maxCustomersPerHour")
-      println(s"  Campaign budget: $$${campaignBudget}")
-      println("=" * 50)
-    
-      // Step 1: Generate customer data
-      println("Step 1: Generating customer data...")
-      val customers = Customer.generateRandomCustomers(numCustomers, seed = 42L)
-      val customerStats = Customer.getStatistics(customers)
-      println(customerStats)
-      
-      // Step 2: Create optimization problem
-      println("\nStep 2: Creating optimization problem...")
-      val problem = new CampaignSchedulingProblem(
-        customers = customers,
-        maxCustomersPerHour = maxCustomersPerHour,
-        campaignBudget = campaignBudget
-      )
-      val problemStats = problem.getStatistics
-      println(problemStats)
-      
-      // Step 3: Configure NSGA-II algorithm (with Spark for evaluation)
-      println("\nStep 3: Configuring NSGA-II algorithm with Spark...")
-      val mutationProbability = 1.0 / problem.getNumberOfVariables
-      
-      val crossover = new SBXCrossover(0.9, 20.0)
-      val mutation = new PolynomialMutation(mutationProbability, 20.0)
-      val selection = new BinaryTournamentSelection[DoubleSolution](
-        new RankingAndCrowdingDistanceComparator[DoubleSolution]()
-      )
-      
-      // Use Spark evaluator
-      import org.uma.jmetalsp.spark.evaluator.SparkSolutionListEvaluator
-      val evaluator = new SparkSolutionListEvaluator[DoubleSolution](sc)
-      
-      // Build NSGA-II algorithm with Spark evaluator
-      val algorithm = new NSGAIIBuilder[DoubleSolution](problem, crossover, mutation, populationSize)
-        .setSelectionOperator(selection)
-        .setMaxEvaluations(maxEvaluations)
-        .setSolutionListEvaluator(evaluator)
-        .build()
-      
-      // Step 4: Run optimization
-      println("\nStep 4: Running optimization with Spark...")
-      println(s"This may take a few minutes...")
-      
-      val algorithmRunner = new AlgorithmRunner.Executor(algorithm).execute()
-      val solutions = algorithm.getResult
-      val executionTime = algorithmRunner.getComputingTime
-      
-      println(s"\nOptimization completed in ${executionTime}ms")
-      println(s"Found ${solutions.size()} solutions on the Pareto front")
-      
-      // Step 5: Analyze results
-      println("\nStep 5: Analyzing results...")
-      analyzeSimpleResults(solutions, customers, problem)
-      
-      // Step 6: Save results
-      println("\nStep 6: Saving results...")
-      saveSparkResults(solutions, problem, spark)
-      
-      println("\n=== SPARK OPTIMIZATION SUMMARY ===")
-      printSimpleSummary(solutions, executionTime, customerStats, problemStats)
-      
+      runSparkOptimizationWithSession(spark)
     } finally {
       spark.stop()
     }
   }
   
+  /**
+   * Main Spark optimization method that accepts an existing SparkSession
+   * This is the preferred method for Zeppelin or when you already have a Spark session
+   */
+  def runSparkOptimizationWithSession(spark: SparkSession): Unit = {
+    val sc = spark.sparkContext
+    
+    // Simple configuration for testing
+    val numCustomers = 100      // Much smaller for testing
+    val populationSize = 20
+    val maxEvaluations = 500
+    val maxCustomersPerHour = 50
+    val campaignBudget = 5000.0
+    
+    println(s"Configuration:")
+    println(s"  Customers: $numCustomers")
+    println(s"  Population size: $populationSize")
+    println(s"  Max evaluations: $maxEvaluations")
+    println(s"  Max customers/hour: $maxCustomersPerHour")
+    println(s"  Campaign budget: $$${campaignBudget}")
+    println("=" * 50)
+
+    // Step 1: Generate customer data
+    println("Step 1: Generating customer data...")
+    val customers = Customer.generateRandomCustomers(numCustomers, seed = 42L)
+    val customerStats = Customer.getStatistics(customers)
+    println(customerStats)
+    
+    // Step 2: Create optimization problem
+    println("\nStep 2: Creating optimization problem...")
+    val problem = new CampaignSchedulingProblem(
+      customers = customers,
+      maxCustomersPerHour = maxCustomersPerHour,
+      campaignBudget = campaignBudget
+    )
+    val problemStats = problem.getStatistics
+    println(problemStats)
+    
+    // Step 3: Configure NSGA-II algorithm (with Spark for evaluation)
+    println("\nStep 3: Configuring NSGA-II algorithm with Spark...")
+    val mutationProbability = 1.0 / problem.getNumberOfVariables
+    
+    val crossover = new SBXCrossover(0.9, 20.0)
+    val mutation = new PolynomialMutation(mutationProbability, 20.0)
+    val selection = new BinaryTournamentSelection[DoubleSolution](
+      new RankingAndCrowdingDistanceComparator[DoubleSolution]()
+    )
+    
+    // Use Spark evaluator
+    import org.uma.jmetalsp.spark.evaluator.SparkSolutionListEvaluator
+    val evaluator = new SparkSolutionListEvaluator[DoubleSolution](sc)
+    
+    // Build NSGA-II algorithm with Spark evaluator
+    val algorithm = new NSGAIIBuilder[DoubleSolution](problem, crossover, mutation, populationSize)
+      .setSelectionOperator(selection)
+      .setMaxEvaluations(maxEvaluations)
+      .setSolutionListEvaluator(evaluator)
+      .build()
+    
+    // Step 4: Run optimization
+    println("\nStep 4: Running optimization with Spark...")
+    println(s"This may take a few minutes...")
+    
+    val algorithmRunner = new AlgorithmRunner.Executor(algorithm).execute()
+    val solutions = algorithm.getResult
+    val executionTime = algorithmRunner.getComputingTime
+    
+    println(s"\nOptimization completed in ${executionTime}ms")
+    println(s"Found ${solutions.size()} solutions on the Pareto front")
+    
+    // Step 5: Analyze results
+    println("\nStep 5: Analyzing results...")
+    analyzeSimpleResults(solutions, customers, problem)
+    
+    // Step 6: Save results
+    println("\nStep 6: Saving results...")
+    saveSparkResults(solutions, problem, spark)
+    
+    println("\n=== SPARK OPTIMIZATION SUMMARY ===")
+    printSimpleSummary(solutions, executionTime, customerStats, problemStats)
+  }
+  
+  /**
+   * Creates a Spark session for standalone usage
+   */
+  def createSparkSession(masterUrl: String): SparkSession = {
+    val builder = SparkSession.builder()
+      .master(masterUrl)
+      .appName("Simple Campaign Scheduling Optimizer")
+      // Add Java compatibility configurations
+      .config("spark.sql.adaptive.enabled", "false") // Disable adaptive query execution for compatibility
+      .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+      .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse") // Set warehouse directory
+    
+    // Try to enable Hive support if available, otherwise continue without it
+    val finalBuilder = Try {
+      builder
+        .config("spark.hadoop.metastore.catalog.default","hive")
+        .enableHiveSupport()
+    } match {
+      case Success(hiveBuilder) =>
+        println("  Hive support enabled")
+        hiveBuilder
+      case Failure(exception) =>
+        println(s"  Hive support not available: ${exception.getMessage}")
+        println("  Continuing without Hive support...")
+        builder
+    }
+    
+    Try {
+      finalBuilder.getOrCreate()
+    } match {
+      case Success(sparkSession) =>
+        println("  Spark session created successfully")
+        sparkSession
+      case Failure(exception) =>
+        println(s"  Failed to create Spark session: ${exception.getMessage}")
+        println("  This might be a Java version compatibility issue.")
+        println("  Try running with Java 8 or 11 for better Spark 3.1.3 compatibility.")
+        throw exception
+    }
+  }
+  
   private def saveSparkResults(solutions: java.util.List[DoubleSolution], problem: CampaignSchedulingProblem, spark: SparkSession): Unit = {
+    val hdfsDirPath = s"hdfs://scluster/user/g1110566/campaign_optimization"
     val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"))
     
     // Save Pareto front
     val output = new SolutionListOutput(solutions)
       .setSeparator("\t")
-      .setVarFileOutputContext(new DefaultFileOutputContext(s"VAR_spark_campaign_${timestamp}.tsv"))
-      .setFunFileOutputContext(new DefaultFileOutputContext(s"FUN_spark_campaign_${timestamp}.tsv"))
+      .setVarFileOutputContext(new DefaultFileOutputContext(s"VAR_simple_campaign_${timestamp}.tsv"))
+      .setFunFileOutputContext(new DefaultFileOutputContext(s"FUN_simple_campaign_${timestamp}.tsv"))
     
     output.print()
     
@@ -199,16 +216,34 @@ object SimpleCampaignOptimizer {
       val schedule = problem.decodeSchedule(bestSolution)
       
       // Try to save as Parquet if Hadoop is available, otherwise CSV
-      if (isHadoopAvailableSimple(spark)) {
-        saveScheduleAsParquetSimple(schedule, bestSolution, s"spark_campaign_${timestamp}", spark)
+      if (isHadoopAvailableSimple(spark, hdfsDirPath)) {
+        saveScheduleAsParquetSimple(schedule, bestSolution, hdfsDirPath, s"simple_campaign_${timestamp}", spark)
       } else {
-        saveScheduleToCSV(schedule, s"SCHEDULE_spark_campaign_${timestamp}.csv")
+        saveScheduleToCSV(schedule, s"SCHEDULE_simple_campaign_${timestamp}.csv")
       }
     }
     
     println(s"Results saved:")
-    println(s"  Variables: VAR_spark_campaign_${timestamp}.tsv")
-    println(s"  Objectives: FUN_spark_campaign_${timestamp}.tsv")
+    println(s"  Variables: VAR_simple_campaign_${timestamp}.tsv")
+    println(s"  Objectives: FUN_simple_campaign_${timestamp}.tsv")
+  }
+  
+  /**
+   * Helper method for Zeppelin notebook usage with existing SparkSession
+   */
+  def optimizeForZeppelin(
+    spark: SparkSession,
+    numCustomers: Int = 100,
+    populationSize: Int = 20,
+    maxEvaluations: Int = 500
+  ): Unit = {
+    println(s"=== Zeppelin Campaign Optimization ===")
+    println(s"Using existing Spark session: ${spark.sparkContext.appName}")
+    println(s"Spark master: ${spark.sparkContext.master}")
+    println(s"Customers: $numCustomers, Population: $populationSize, Evaluations: $maxEvaluations")
+    println("=" * 50)
+    
+    runSparkOptimizationWithSession(spark)
   }
   
   /**
@@ -638,6 +673,7 @@ object SimpleCampaignOptimizer {
   private def saveScheduleAsParquetSimple(
     schedule: CampaignSchedule,
     solution: DoubleSolution,
+    hdfsDirPath: String,
     filename: String,
     spark: SparkSession
   ): Unit = {
@@ -669,7 +705,7 @@ object SimpleCampaignOptimizer {
         )
       }
       
-      val hdfsPath = s"hdfs://scluster/user/g1110566/campaign_optimization/simple_schedule_${filename}"
+      val hdfsPath = s"${hdfsDirPath}/simple_schedule_${filename}"
       
       val df = scheduleData.toList.toDF()
       
@@ -689,7 +725,7 @@ object SimpleCampaignOptimizer {
     }
   }
   
-  private def isHadoopAvailableSimple(spark: SparkSession): Boolean = {
+  private def isHadoopAvailableSimple(spark: SparkSession, hdfsDirPath: String): Boolean = {
     try {
       // Simple check for Hadoop availability
       val hadoopHome = sys.env.get("HADOOP_HOME")
@@ -717,6 +753,14 @@ object SimpleCampaignOptimizer {
         
         if (exists) {
           println(s"HDFS available at: $defaultFS - will save as Parquet")
+          
+          // Try to create campaign optimization directory if it doesn't exist
+          val campaignDir = new org.apache.hadoop.fs.Path(hdfsDirPath)
+          if (!fs.exists(campaignDir)) {
+            fs.mkdirs(campaignDir)
+            println(s"Created ${hdfsDirPath} directory on HDFS")
+          }
+          
           true
         } else {
           println("HDFS not accessible - saving as local CSV")
@@ -730,4 +774,4 @@ object SimpleCampaignOptimizer {
         false
     }
   }
-} 
+}

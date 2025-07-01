@@ -23692,3 +23692,951 @@ INFO: Unsupported notification method: $/setTrace
 2025.07.01 13:17:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
 2025.07.01 13:17:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
 2025.07.01 13:19:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 13:28:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 13:28:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:03:21 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:19:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:19:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:19:46 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:19:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:19:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:02 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:20:02 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:20:48 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:33:37 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala
+2025.07.01 15:33:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:33:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:45 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:36:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:59 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:36:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:36:59 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:36:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:26 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:37:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:28 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:37:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:32 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 15:37:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:38 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 15:37:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:37:52 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 15:37:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:04 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:04 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:04 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:04 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 15:38:04 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:38:06 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 15:38:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:39:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:39:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:39:52 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:39:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:39:52 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:39:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:41:16 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:41:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:44 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:48 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:49:48 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:49:53 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:49:53 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:49:53 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:53 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:53 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:53 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:53 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:49:53 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:49:53 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:56 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:49:56 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:49:56 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:56 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:56 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:56 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:56 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:49:56 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:49:56 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:59 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:49:59 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:49:59 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:59 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:49:59 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:59 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:49:59 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:49:59 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:49:59 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:02 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:50:02 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:50:02 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:02 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:02 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:02 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:02 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:50:02 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:50:02 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:05 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:50:05 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:50:05 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:05 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:05 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:05 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:05 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:50:05 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:50:05 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:08 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:50:08 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:50:08 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:08 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:08 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:08 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:50:08 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:50:08 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:50:08 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:50:09 ERROR Failed to resolve mtags for 2.12.0
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:50:09 WARN  unsupported Scala 2.12.0
+2025.07.01 15:50:09 INFO  time: code lens generation in 3.37s
+2025.07.01 15:50:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:46 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:50:48 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:51:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:52:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:12 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:53:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:09 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:54:09 INFO  empty definition using pc, found symbol in pc: org/uma/jmetalsp/spark/examples/campaign/CampaignSchedule# (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-09-401.md")
+2025.07.01 15:54:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:19 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:21 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:21 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:23 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:26 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:28 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:54:28 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-28-777.md")
+2025.07.01 15:54:34 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:39 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:43 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:43 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:44 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:44 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:47 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:54:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:52 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:54 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:54:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:54 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:54:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:54 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:54:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:56 WARN  Could not find 'DoubleSolution' using presentation compiler nor semanticdb. Trying to guess the definition using available information from local class context. 
+2025.07.01 15:54:56 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:54:56 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-56-806.md")
+2025.07.01 15:54:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:54:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:02 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:02 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:55:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:31 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:32 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:36 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:36 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:36 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:41 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:41 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:41 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:41 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:41 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:41 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:41 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:41 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:41 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:44 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:44 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:44 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:44 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:44 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:44 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:44 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:44 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:44 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:47 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:47 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:47 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:47 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:47 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:47 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:47 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:47 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:47 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:50 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:50 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:50 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:50 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:50 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:50 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:50 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:50 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:50 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:54 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:54 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:54 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:54 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:54 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:54 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:54 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:54 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:54 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:57 ERROR Error downloading Dependency{module=Module(org.scalameta, mtags_2.12.0), version='1.6.0', exclusions=[], configuration='', publication=null, transitive=true, overrides={}}
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:57 INFO  Found coursier in path under /Users/1110566/.metals/cs, using it to fetch dependency
+2025.07.01 15:55:57 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:57 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:57 ERROR Downloading https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:57 ERROR Downloaded https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom.sha1
+2025.07.01 15:55:57 ERROR Resolution error: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+2025.07.01 15:55:57 ERROR   not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+2025.07.01 15:55:57 ERROR   not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+2025.07.01 15:55:58 ERROR Failed to resolve mtags for 2.12.0
+coursierapi.error.SimpleResolutionError$1: Error downloading org.scalameta:mtags_2.12.0:1.6.0
+  not found: /Users/1110566/.ivy2/local/org.scalameta/mtags_2.12.0/1.6.0/ivys/ivy.xml
+  not found: https://repo1.maven.org/maven2/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: /Users/1110566/.m2/repository/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://oss.sonatype.org/content/repositories/public/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+  not found: https://central.sonatype.com/repository/maven-snapshots/org/scalameta/mtags_2.12.0/1.6.0/mtags_2.12.0-1.6.0.pom
+	at coursierapi.error.SimpleResolutionError.of(SimpleResolutionError.java:11)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.simpleResError(ApiHelper.scala:451)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper$.doFetch(ApiHelper.scala:495)
+	at coursierapi.shaded.coursier.internal.api.ApiHelper.doFetch(ApiHelper.scala)
+	at coursierapi.Fetch.fetchResult(Fetch.java:239)
+	at coursierapi.Fetch.fetch(Fetch.java:234)
+	at scala.meta.internal.metals.Embedded$.downloadDependency(Embedded.scala:405)
+	at scala.meta.internal.metals.Embedded$.downloadMtags(Embedded.scala:454)
+	at scala.meta.internal.metals.MtagsResolver$Default.$anonfun$resolve$3(MtagsResolver.scala:166)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2025.07.01 15:55:58 WARN  unsupported Scala 2.12.0
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:55:58 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:55:58 INFO  empty definition using pc, found symbol in pc: org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingProblem#decodeSchedule(). (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-55-58-562.md")
+2025.07.01 15:56:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:21 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:23 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:57 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:57 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:56:58 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:56:58 INFO  empty definition using pc, found symbol in pc: org/uma/jmetalsp/spark/examples/campaign/SolutionMetrics.apply(). (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-56-58-860.md")
+2025.07.01 15:56:58 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:56:58 INFO  empty definition using pc, found symbol in pc: org/uma/jmetalsp/spark/examples/campaign/CustomerAssignment#priority. (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-56-58-892.md")
+2025.07.01 15:57:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:07 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:11 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:11 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:11 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:14 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:18 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:19 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:19 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:20 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:57:20 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-57-20-002.md")
+2025.07.01 15:57:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:20 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:57:20 INFO  empty definition using pc, found symbol in pc: org/uma/jmetalsp/spark/examples/campaign/CustomerAssignment#customerId. (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-57-20-069.md")
+2025.07.01 15:57:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:29 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:31 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:31 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:33 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:35 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:35 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:35 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:36 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:44 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:44 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:51 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:51 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:51 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:57:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:03 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-28-777.md")
+2025.07.01 15:58:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:03 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-28-777.md")
+2025.07.01 15:58:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:03 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-28-777.md")
+2025.07.01 15:58:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:03 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_09-12-50-815.md")
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:06 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:07 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:07 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:08 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:11 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:58:11 INFO  compiling jmetalsp-spark (2 scala sources and 10 java sources)
+2025.07.01 15:58:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:13 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:15 WARN  javac exited with exit code 1
+2025.07.01 15:58:15 INFO  time: compiled jmetalsp-spark in 3.56s
+2025.07.01 15:58:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:19 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:38 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:42 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:43 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:43 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:43 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:45 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:46 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:46 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:46 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:46 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-54-28-777.md")
+2025.07.01 15:58:46 INFO  Created report: Optional[file:///Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala]
+2025.07.01 15:58:46 INFO  empty definition using pc, found symbol in pc:  (full report at: "/Users/1110566/workspace/jMetalSP/.metals/.reports/metals-full/2025-07-01/r_empty-definition_15-58-46-927.md")
+2025.07.01 15:58:48 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:50 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:54 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:57 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:57 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:56 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:58:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:21 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 15:59:21 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:24 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:31 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:33 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:33 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:33 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:37 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:49 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 15:59:53 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:02 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:02 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:02 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:09 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:15 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:16 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:00:17 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 16:00:17 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:01:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:01:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:01:59 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 16:01:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:01:59 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 16:01:59 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:02:03 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+2025.07.01 16:02:03 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:02:10 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:02:11 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:02:11 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:02:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:08:47 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:08:47 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:00 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:00 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:01 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:01 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:05 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:05 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:22 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:23 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:22 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:25 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:40 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:40 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:10:40 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:10:41 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:11:25 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:11:25 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:12:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:12:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:12:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:12:20 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:12:20 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:12:23 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:12:23 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:13:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:13:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:13:27 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:13:27 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:13:28 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:13:28 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17
+2025.07.01 16:13:30 WARN  no build target for: /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala
+2025.07.01 16:13:30 INFO  no build target found for /Users/1110566/workspace/jMetalSP/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/SimpleCampaignOptimizer.scala. Using presentation compiler with project's scala-library version: 2.12.17

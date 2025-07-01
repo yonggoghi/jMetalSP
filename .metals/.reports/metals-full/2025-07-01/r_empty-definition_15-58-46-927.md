@@ -1,3 +1,22 @@
+error id: file://<WORKSPACE>/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala:local176
+file://<WORKSPACE>/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+empty definition using pc, found symbol in pc: 
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+	 -scala/collection/JavaConverters.spark.sparkContext.hadoopConfiguration.
+	 -scala/collection/JavaConverters.spark.sparkContext.hadoopConfiguration#
+	 -scala/collection/JavaConverters.spark.sparkContext.hadoopConfiguration().
+	 -spark/sparkContext/hadoopConfiguration.
+	 -spark/sparkContext/hadoopConfiguration#
+	 -spark/sparkContext/hadoopConfiguration().
+	 -scala/Predef.spark.sparkContext.hadoopConfiguration.
+	 -scala/Predef.spark.sparkContext.hadoopConfiguration#
+	 -scala/Predef.spark.sparkContext.hadoopConfiguration().
+offset: 30323
+uri: file://<WORKSPACE>/spark_example/src/main/scala/org/uma/jmetalsp/spark/examples/campaign/CampaignSchedulingOptimizer.scala
+text:
+```scala
 package org.uma.jmetalsp.spark.examples.campaign
 
 import org.apache.spark.{SparkConf, SparkContext}
@@ -622,7 +641,7 @@ class CampaignSchedulingOptimizer {
       saveScheduleData(bestSatisfactionSolution, problem, spark, hdfsDirPath, s"best_satisfaction_${timestamp}")
       
       // Also save all solutions summary
-      saveAllSolutionsSummary(solutionsList, problem, spark, hdfsDirPath, timestamp)
+      saveAllSolutionsSummary(solutionsList, problem, spark, timestamp)
     }
     
     println(s"Results saved with timestamp: $timestamp")
@@ -638,7 +657,7 @@ class CampaignSchedulingOptimizer {
     
     val schedule = problem.decodeSchedule(solution)
     
-    if (isHadoopAvailable(spark, hdfsDirPath)) {
+    if (isHadoopAvailable(spark)) {
       saveScheduleAsParquet(schedule, solution, spark, hdfsDirPath, filename)
     } else {
       saveScheduleAsCSV(schedule, s"${filename}.csv")
@@ -649,7 +668,6 @@ class CampaignSchedulingOptimizer {
     solutions: List[DoubleSolution],
     problem: CampaignSchedulingProblem,
     spark: SparkSession,
-    hdfsDirPath: String,
     timestamp: String
   ): Unit = {
     
@@ -677,9 +695,9 @@ class CampaignSchedulingOptimizer {
       )
     }
     
-    if (isHadoopAvailable(spark, hdfsDirPath)) {
+    if (isHadoopAvailable(spark)) {
       val df = summaryData.toList.toDF()
-      val hdfsPath = s"${hdfsDirPath}/solutions_summary_${timestamp}"
+      val hdfsPath = s"hdfs://scluster/user/g1110566/campaign_optimization/solutions_summary_${timestamp}"
       
       try {
         df.write
@@ -807,7 +825,7 @@ class CampaignSchedulingOptimizer {
   private def isHadoopAvailable(spark: SparkSession, hdfsDirPath: String): Boolean = {
     try {
       // Check if Hadoop configuration is available
-      val hadoopConf = spark.sparkContext.hadoopConfiguration
+      val hadoopConf = spark.sparkContext.hadoopConfi@@guration
       
       // Check if HDFS is configured
       val defaultFS = hadoopConf.get("fs.defaultFS", "")
@@ -827,7 +845,7 @@ class CampaignSchedulingOptimizer {
         println(s"HDFS available at: $defaultFS")
         
         // Try to create campaign optimization directory if it doesn't exist
-        val campaignDir = new org.apache.hadoop.fs.Path(hdfsDirPath)
+        val campaignDir = new org.apache.hadoop.fs.Path("campaign_optimization")
         if (!fs.exists(campaignDir)) {
           fs.mkdirs(campaignDir)
           println("Created /campaign_optimization directory on HDFS")
@@ -963,3 +981,9 @@ case class SolutionSummary(
   avgResponseRate: Double,
   costPerResponse: Double
 ) 
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: 
