@@ -46,11 +46,16 @@ object CampaignSchedulingOptimizer {
   def main(args: Array[String]): Unit = {
     val optimizer = new CampaignSchedulingOptimizer()
     
+    // Parse command line arguments
+    val config = parseArgs(args, optimizer)
+    
+    println(s"Starting optimization with configuration: $config")
+    
     Try {
       // Create Spark session for standalone usage only
-      val spark = optimizer.createSparkSession(optimizer.OptimizationConfig())
+      val spark = optimizer.createSparkSession(config)
       try {
-        val results = optimizer.optimizeWithSpark(spark)
+        val results = optimizer.optimizeWithSpark(spark, config)
         optimizer.printResults(results)
       } finally {
         spark.stop()
@@ -67,6 +72,127 @@ object CampaignSchedulingOptimizer {
         System.exit(1)
     }
   }
+  
+  private def parseArgs(args: Array[String], optimizer: CampaignSchedulingOptimizer): optimizer.OptimizationConfig = {
+    var populationSize = 100
+    var maxEvaluations = 10000
+    var crossoverProbability = 0.9
+    var crossoverDistributionIndex = 20.0
+    var mutationDistributionIndex = 20.0
+    var numCustomersDemo = 1000
+    var maxCustomersPerHour = 500
+    var campaignBudget = 50000.0
+    var businessPriorityThreshold = 0.3 // Lowered from 0.5 for better utilization
+    var sparkMaster: Option[String] = None
+    var enableCheckpointing = true
+    
+    var i = 0
+    while (i < args.length) {
+      args(i) match {
+        case "--population-size" =>
+          i += 1
+          if (i < args.length) populationSize = args(i).toInt
+        case "--max-evaluations" =>
+          i += 1
+          if (i < args.length) maxEvaluations = args(i).toInt
+        case "--crossover-probability" =>
+          i += 1
+          if (i < args.length) crossoverProbability = args(i).toDouble
+        case "--crossover-distribution-index" =>
+          i += 1
+          if (i < args.length) crossoverDistributionIndex = args(i).toDouble
+        case "--mutation-distribution-index" =>
+          i += 1
+          if (i < args.length) mutationDistributionIndex = args(i).toDouble
+        case "--num-customers" =>
+          i += 1
+          if (i < args.length) numCustomersDemo = args(i).toInt
+        case "--max-customers-per-hour" =>
+          i += 1
+          if (i < args.length) maxCustomersPerHour = args(i).toInt
+        case "--campaign-budget" =>
+          i += 1
+          if (i < args.length) campaignBudget = args(i).toDouble
+        case "--business-priority-threshold" =>
+          i += 1
+          if (i < args.length) businessPriorityThreshold = args(i).toDouble
+        case "--spark-master" =>
+          i += 1
+          if (i < args.length) sparkMaster = Some(args(i))
+        case "--disable-checkpointing" =>
+          enableCheckpointing = false
+        case "--help" =>
+          printUsage()
+          System.exit(0)
+        case unknown =>
+          println(s"Unknown argument: $unknown")
+          printUsage()
+          System.exit(1)
+      }
+      i += 1
+    }
+    
+    optimizer.OptimizationConfig(
+      populationSize = populationSize,
+      maxEvaluations = maxEvaluations,
+      crossoverProbability = crossoverProbability,
+      crossoverDistributionIndex = crossoverDistributionIndex,
+      mutationDistributionIndex = mutationDistributionIndex,
+      numCustomersDemo = numCustomersDemo,
+      maxCustomersPerHour = maxCustomersPerHour,
+      campaignBudget = campaignBudget,
+      businessPriorityThreshold = businessPriorityThreshold,
+      sparkMaster = sparkMaster,
+      enableCheckpointing = enableCheckpointing
+    )
+  }
+  
+  private def printUsage(): Unit = {
+    println("Usage: CampaignSchedulingOptimizer [options]")
+    println()
+    println("Options:")
+    println("  --population-size <int>              Population size for NSGA-II (default: 100)")
+    println("  --max-evaluations <int>              Maximum number of evaluations (default: 10000)")
+    println("  --crossover-probability <double>     Crossover probability (default: 0.9)")
+    println("  --crossover-distribution-index <double> Crossover distribution index (default: 20.0)")
+    println("  --mutation-distribution-index <double>  Mutation distribution index (default: 20.0)")
+    println("  --num-customers <int>                Number of customers for demo (default: 1000)")
+    println("  --max-customers-per-hour <int>       Max customers per hour capacity (default: 500)")
+    println("  --campaign-budget <double>           Campaign budget (default: 50000.0)")
+    println("  --business-priority-threshold <double> Business priority threshold (default: 0.3)")
+    println("  --spark-master <string>              Spark master URL (default: auto-detect)")
+    println("  --disable-checkpointing              Disable Spark checkpointing")
+    println("  --help                               Show this help message")
+    println()
+    println("Examples:")
+    println("  # Basic usage with default parameters")
+    println("  spark-submit --class CampaignSchedulingOptimizer app.jar")
+    println()
+    println("  # Custom configuration")
+    println("  spark-submit --class CampaignSchedulingOptimizer app.jar \\")
+    println("    --population-size 200 \\")
+    println("    --max-evaluations 20000 \\")
+    println("    --num-customers 5000 \\")
+    println("    --campaign-budget 100000")
+    println()
+    println("  # YARN cluster mode")
+    println("  spark-submit --master yarn --deploy-mode cluster \\")
+    println("    --class CampaignSchedulingOptimizer app.jar \\")
+    println("    --num-customers 10000 \\")
+    println("    --max-evaluations 50000")
+    println()
+    println("  # Optimize business priority threshold for better utilization")
+    println("  spark-submit --class CampaignSchedulingOptimizer app.jar \\")
+    println("    --num-customers 1000 \\")
+    println("    --business-priority-threshold 0.2 \\")
+    println("    --max-customers-per-hour 800")
+    println()
+    println("Business Priority Thresholds:")
+    println("  0.1-0.2: High utilization (70-90% customers), lower ARPU focus")
+    println("  0.3-0.4: Balanced utilization (50-70% customers), good ARPU/volume trade-off")
+    println("  0.5-0.7: Premium focus (30-50% customers), highest ARPU customers only")
+    println("  0.8+   : Ultra-premium (10-30% customers), top-tier customers only")
+  }
 }
 
 class CampaignSchedulingOptimizer {
@@ -81,6 +207,7 @@ class CampaignSchedulingOptimizer {
     numCustomersDemo: Int = 1000, // Scale down for demo (would be 10M in production)
     maxCustomersPerHour: Int = 500, // Scale down for demo
     campaignBudget: Double = 50000.0, // Scale down for demo
+    businessPriorityThreshold: Double = 0.3, // ARPU-based business priority threshold
     sparkMaster: Option[String] = None, // Auto-detect if None
     enableCheckpointing: Boolean = true
   )
@@ -249,7 +376,8 @@ class CampaignSchedulingOptimizer {
     val problem = new CampaignSchedulingProblem(
       customers = customers,
       maxCustomersPerHour = config.maxCustomersPerHour,
-      campaignBudget = config.campaignBudget
+      campaignBudget = config.campaignBudget,
+      businessPriorityThreshold = config.businessPriorityThreshold
     )
     val problemStats = problem.getStatistics
     println(problemStats)
@@ -431,24 +559,17 @@ class CampaignSchedulingOptimizer {
     // Find solution with best response rate (lowest value since we negate it)
     val bestResponseSolution = solutionsList.minBy(_.getObjective(0))
     
-    // Find solution with lowest cost
-    val lowestCostSolution = solutionsList.minBy(_.getObjective(1))
-    
-    // Find solution with best satisfaction (lowest value since we negate it)
-    val bestSatisfactionSolution = solutionsList.minBy(_.getObjective(2))
+    // Find solution with best ARPU-weighted value (lowest value since we negate it)
+    val bestValueSolution = solutionsList.minBy(_.getObjective(1))
     
     println("\n=== BEST SOLUTIONS ANALYSIS ===")
     println("Best Response Rate Solution:")
     printSolutionDetails(bestResponseSolution)
     printScheduleDetails(bestResponseSolution, problem, "BEST RESPONSE RATE")
     
-    println("\nLowest Cost Solution:")
-    printSolutionDetails(lowestCostSolution)
-    printScheduleDetails(lowestCostSolution, problem, "LOWEST COST")
-    
-    println("\nBest Satisfaction Solution:")
-    printSolutionDetails(bestSatisfactionSolution)
-    printScheduleDetails(bestSatisfactionSolution, problem, "BEST SATISFACTION")
+    println("\nBest ARPU-Weighted Value Solution:")
+    printSolutionDetails(bestValueSolution)
+    printScheduleDetails(bestValueSolution, problem, "BEST ARPU-WEIGHTED VALUE")
     
     // Print summary statistics
     printSolutionStatistics(solutionsList)
@@ -459,12 +580,12 @@ class CampaignSchedulingOptimizer {
   
   private def printSolutionDetails(solution: DoubleSolution): Unit = {
     val responseRate = -solution.getObjective(0) // Un-negate
-    val cost = solution.getObjective(1)
-    val satisfaction = -solution.getObjective(2) // Un-negate
+    val arpuWeightedValue = -solution.getObjective(1) // Un-negate
+    val totalCost = Option(solution.getAttribute("TotalCost")).map(_.toString.toDouble).getOrElse(0.0)
     
     println(f"  Expected responses: ${responseRate}%.2f")
-    println(f"  Total cost: $$${cost}%.2f")
-    println(f"  Customer satisfaction: ${satisfaction}%.3f")
+    println(f"  ARPU-weighted value: $$${arpuWeightedValue}%.2f")
+    println(f"  Total cost: $$${totalCost}%.2f")
     
     // Check constraint violations
     val capacityViolation = Option(solution.getAttribute("CapacityViolation")).map(_.toString.toDouble).getOrElse(0.0)
@@ -507,7 +628,40 @@ class CampaignSchedulingOptimizer {
     // Decode the solution into a schedule
     val schedule = decodeScheduleFromSolution(solution, problem)
     
-    println(f"Schedule contains ${schedule.assignments.length} customer assignments:")
+    // DIAGNOSTIC: Analyze why customers are not assigned
+    println("\n=== ASSIGNMENT ANALYSIS ===")
+    val businessPriorityFilteredOut = Option(solution.getAttribute("BusinessPriorityFilteredOut")).map(_.toString.toInt).getOrElse(0)
+    val contactConstraintFilteredOut = Option(solution.getAttribute("ContactConstraintFilteredOut")).map(_.toString.toInt).getOrElse(0)
+    val capacityFilteredOut = Option(solution.getAttribute("CapacityFilteredOut")).map(_.toString.toInt).getOrElse(0)
+    val totalProcessed = Option(solution.getAttribute("TotalProcessed")).map(_.toString.toInt).getOrElse(0)
+    val totalAssigned = totalProcessed - businessPriorityFilteredOut - contactConstraintFilteredOut - capacityFilteredOut
+    
+    println(f"Total customers: ${problem.customers.length}")
+    println(f"Business priority threshold filtered out: $businessPriorityFilteredOut")
+    println(f"Contact constraint (48h) filtered out: $contactConstraintFilteredOut")
+    println(f"Hourly capacity constraint filtered out: $capacityFilteredOut")
+    println(f"Successfully assigned: $totalAssigned")
+    println(f"Max customers per hour setting: ${problem.maxCustomersPerHour}")
+    println(f"Campaign budget setting: ${problem.campaignBudget}")
+    
+    // Show business priority distribution
+    val customerPriorities = problem.customers.map(_.getBusinessPriority)
+    val avgBusinessPriority = customerPriorities.sum / customerPriorities.length
+    val maxBusinessPriority = customerPriorities.max
+    val minBusinessPriority = customerPriorities.min
+    val highPriorityCustomers = customerPriorities.count(_ > 1.0)
+    
+    println(f"\n=== BUSINESS PRIORITY DISTRIBUTION ===")
+    println(f"Average customer business priority: ${avgBusinessPriority}%.3f")
+    println(f"Min business priority: ${minBusinessPriority}%.3f")
+    println(f"Max business priority: ${maxBusinessPriority}%.3f")
+    println(f"High-value customers (priority > 1.0): $highPriorityCustomers")
+    // Get threshold from problem statistics 
+    val problemStats = problem.getStatistics
+    println(f"Business priority threshold: ${problemStats.businessPriorityThreshold}%.2f")
+    
+    // Show actual schedule details
+    println(f"\nSchedule contains ${schedule.assignments.length} customer assignments:")
     println("CustomerID\tTimeSlot\tChannel\tExpectedResponse\tCost\tPriority")
     println("-" * 80)
     
@@ -533,11 +687,11 @@ class CampaignSchedulingOptimizer {
     
     // Show hourly distribution
     println(f"\nHourly Load Distribution (first 24 hours):")
-    println("Hour\tAssignments")
-    println("-" * 20)
+    println("Hour\tAssignments\tCapacity")
+    println("-" * 30)
     schedule.hourlyLoads.take(24).zipWithIndex.foreach { case (load, hour) =>
       if (load > 0) {
-        println(f"${hour}%4d\t${load}%11d")
+        println(f"${hour}%4d\t${load}%11d\t${problem.maxCustomersPerHour}%8d")
       }
     }
     
@@ -556,6 +710,29 @@ class CampaignSchedulingOptimizer {
       }
       println(f"${channelName}%7s\t${count}%11d")
     }
+    
+    println(f"\n=== RECOMMENDATIONS ===")
+    if (businessPriorityFilteredOut > totalAssigned) {
+      println("• MAIN ISSUE: Business priority threshold is filtering out most customers")
+      println(f"• Current threshold: ${problemStats.businessPriorityThreshold}%.2f")
+      println("• Consider lowering the business priority threshold in CampaignSchedulingProblem.scala")
+      println("• Or increase population size and max evaluations to evolve better ARPU-based priorities")
+    }
+    if (capacityFilteredOut > 0) {
+      println(f"• Hourly capacity constraint blocked $capacityFilteredOut assignments")
+      println(f"• Consider increasing --max-customers-per-hour (current: ${problem.maxCustomersPerHour})")
+    }
+    if (contactConstraintFilteredOut > 0) {
+      println(f"• 48-hour contact constraint blocked $contactConstraintFilteredOut assignments")
+    }
+    
+    // ARPU-specific recommendations
+    val lowArpuCustomers = problem.customers.count(_.arpu < 30.0)
+    val highArpuCustomers = problem.customers.count(_.arpu > 80.0)
+    if (lowArpuCustomers > highArpuCustomers && businessPriorityFilteredOut > totalAssigned) {
+      println(f"• Many low-ARPU customers (${lowArpuCustomers}) may need lower priority threshold")
+      println(f"• High-ARPU customers (${highArpuCustomers}) are being prioritized")
+    }
   }
   
   private def decodeScheduleFromSolution(solution: DoubleSolution, problem: CampaignSchedulingProblem): CampaignSchedule = {
@@ -564,28 +741,42 @@ class CampaignSchedulingOptimizer {
   
   private def printSolutionStatistics(solutions: List[DoubleSolution]): Unit = {
     val responseRates = solutions.map(-_.getObjective(0))
-    val costs = solutions.map(_.getObjective(1))
-    val satisfactions = solutions.map(-_.getObjective(2))
+    val arpuWeightedValues = solutions.map(-_.getObjective(1))
+    val costs = solutions.map(sol => Option(sol.getAttribute("TotalCost")).map(_.toString.toDouble).getOrElse(0.0))
     
     println(f"\n=== SOLUTION STATISTICS ===")
     println(f"Response Rate Range: ${responseRates.min}%.2f - ${responseRates.max}%.2f")
-    println(f"Cost Range: $$${costs.min}%.2f - $$${costs.max}%.2f")
-    println(f"Satisfaction Range: ${satisfactions.min}%.3f - ${satisfactions.max}%.3f")
+    println(f"ARPU-Weighted Value Range: $$${arpuWeightedValues.min}%.2f - $$${arpuWeightedValues.max}%.2f")
+    if (costs.nonEmpty && costs.max > 0) {
+      println(f"Cost Range: $$${costs.min}%.2f - $$${costs.max}%.2f")
+    }
     
     // Calculate trade-offs
     val avgResponseRate = responseRates.sum / responseRates.length
-    val avgCost = costs.sum / costs.length
-    val avgSatisfaction = satisfactions.sum / satisfactions.length
+    val avgArpuWeightedValue = arpuWeightedValues.sum / arpuWeightedValues.length
+    val avgCost = if (costs.nonEmpty) costs.sum / costs.length else 0.0
     
     println(f"\n=== AVERAGE VALUES ===")
     println(f"Average Response Rate: ${avgResponseRate}%.2f")
-    println(f"Average Cost: $$${avgCost}%.2f")
-    println(f"Average Satisfaction: ${avgSatisfaction}%.3f")
-    
-    // Cost efficiency metrics
+    println(f"Average ARPU-Weighted Value: $$${avgArpuWeightedValue}%.2f")
     if (avgCost > 0) {
-      println(f"Cost per Response: $$${avgCost/Math.max(avgResponseRate, 0.01)}%.2f")
+      println(f"Average Cost: $$${avgCost}%.2f")
     }
+    
+    // Business efficiency metrics
+    if (avgCost > 0 && avgResponseRate > 0) {
+      println(f"Cost per Response: $$${avgCost/avgResponseRate}%.2f")
+      println(f"Value per Response: $$${avgArpuWeightedValue/avgResponseRate}%.2f")
+      println(f"ROI (Value/Cost): ${avgArpuWeightedValue/avgCost}%.2fx")
+    }
+    
+    // Pareto front analysis
+    println(f"\n=== PARETO FRONT ANALYSIS ===")
+    println(f"Solutions span ${solutions.length} different trade-offs")
+    val responseDiversity = (responseRates.max - responseRates.min) / responseRates.max * 100
+    val valueDiversity = (arpuWeightedValues.max - arpuWeightedValues.min) / arpuWeightedValues.max * 100
+    println(f"Response rate diversity: ${responseDiversity}%.1f%%")
+    println(f"ARPU-weighted value diversity: ${valueDiversity}%.1f%%")
   }
   
   private def saveResults(
@@ -613,13 +804,11 @@ class CampaignSchedulingOptimizer {
       
       // Get best solution for each objective
       val bestResponseSolution = solutionsList.minBy(_.getObjective(0))
-      val lowestCostSolution = solutionsList.minBy(_.getObjective(1))
-      val bestSatisfactionSolution = solutionsList.minBy(_.getObjective(2))
+      val bestValueSolution = solutionsList.minBy(_.getObjective(1))
       
       // Save schedules in appropriate format (Parquet on HDFS or CSV locally)
       saveScheduleData(bestResponseSolution, problem, spark, hdfsDirPath, s"best_response_${timestamp}")
-      saveScheduleData(lowestCostSolution, problem, spark, hdfsDirPath, s"lowest_cost_${timestamp}")
-      saveScheduleData(bestSatisfactionSolution, problem, spark, hdfsDirPath, s"best_satisfaction_${timestamp}")
+      saveScheduleData(bestValueSolution, problem, spark, hdfsDirPath, s"best_arpu_value_${timestamp}")
       
       // Also save all solutions summary
       saveAllSolutionsSummary(solutionsList, problem, spark, hdfsDirPath, timestamp)
@@ -663,8 +852,8 @@ class CampaignSchedulingOptimizer {
         solutionId = index,
         timestamp = timestamp,
         expectedResponses = -solution.getObjective(0), // Un-negate
-        totalCost = solution.getObjective(1),
-        customerSatisfaction = -solution.getObjective(2), // Un-negate
+        totalCost = schedule.totalCost,
+        customerValue = -solution.getObjective(1), // Un-negate ARPU-weighted value
         totalAssignments = schedule.assignments.length,
         maxHourlyLoad = schedule.hourlyLoads.max,
         utilizationRate = schedule.assignments.length.toDouble / problem.customers.length,
@@ -673,7 +862,7 @@ class CampaignSchedulingOptimizer {
         pushAssignments = schedule.assignments.count(_.channel == 2),
         inAppAssignments = schedule.assignments.count(_.channel == 3),
         avgResponseRate = if (schedule.assignments.nonEmpty) schedule.assignments.map(_.expectedResponseRate).sum / schedule.assignments.length else 0.0,
-        costPerResponse = if (schedule.assignments.nonEmpty) solution.getObjective(1) / (-solution.getObjective(0)) else 0.0
+        costPerResponse = if (schedule.totalCost > 0 && schedule.totalExpectedResponses > 0) schedule.totalCost / schedule.totalExpectedResponses else 0.0
       )
     }
     
@@ -726,8 +915,8 @@ class CampaignSchedulingOptimizer {
         priority = assignment.priority,
         solutionMetrics = SolutionMetrics(
           expectedResponses = -solution.getObjective(0),
-          totalCost = solution.getObjective(1),
-          customerSatisfaction = -solution.getObjective(2)
+          totalCost = schedule.totalCost,
+          customerValue = -solution.getObjective(1) // ARPU-weighted value
         )
       )
     }
@@ -735,7 +924,7 @@ class CampaignSchedulingOptimizer {
     val hdfsPath = s"${hdfsDirPath}/schedule_${filename}"
     
     try {
-      val df = scheduleData.toList.toDF()
+      val df = scheduleData.toSeq.toDF()
       
       df.write
         .mode("overwrite")
@@ -791,11 +980,11 @@ class CampaignSchedulingOptimizer {
     val writer = new PrintWriter(new File(filename))
     try {
       // Write CSV header
-      writer.println("SolutionId,Timestamp,ExpectedResponses,TotalCost,CustomerSatisfaction,TotalAssignments,MaxHourlyLoad,UtilizationRate,EmailAssignments,SmsAssignments,PushAssignments,InAppAssignments,AvgResponseRate,CostPerResponse")
+      writer.println("SolutionId,Timestamp,ExpectedResponses,TotalCost,CustomerValue,TotalAssignments,MaxHourlyLoad,UtilizationRate,EmailAssignments,SmsAssignments,PushAssignments,InAppAssignments,AvgResponseRate,CostPerResponse")
       
       // Write data
       summaryData.foreach { summary =>
-        writer.println(s"${summary.solutionId},${summary.timestamp},${summary.expectedResponses},${summary.totalCost},${summary.customerSatisfaction},${summary.totalAssignments},${summary.maxHourlyLoad},${summary.utilizationRate},${summary.emailAssignments},${summary.smsAssignments},${summary.pushAssignments},${summary.inAppAssignments},${summary.avgResponseRate},${summary.costPerResponse}")
+        writer.println(s"${summary.solutionId},${summary.timestamp},${summary.expectedResponses},${summary.totalCost},${summary.customerValue},${summary.totalAssignments},${summary.maxHourlyLoad},${summary.utilizationRate},${summary.emailAssignments},${summary.smsAssignments},${summary.pushAssignments},${summary.inAppAssignments},${summary.avgResponseRate},${summary.costPerResponse}")
       }
       
       println(s"Solutions summary saved locally as CSV: $filename")
@@ -864,7 +1053,7 @@ class CampaignSchedulingOptimizer {
         println(s"\nSolution ${index + 1}:")
         println(f"  Expected responses: ${metrics.totalResponseRate}%.2f")
         println(f"  Total cost: $$${metrics.totalCost}%.2f")
-        println(f"  Customer satisfaction: ${metrics.customerSatisfaction}%.3f")
+        println(f"  Customer value: $$${metrics.customerValue}%.2f")
         println(f"  Max hourly load: ${metrics.maxHourlyLoad}")
         println(f"  Utilization: ${metrics.utilizationEfficiency * 100}%.1f%%")
       }
@@ -941,7 +1130,7 @@ case class ScheduleRecord(
 case class SolutionMetrics(
   expectedResponses: Double,
   totalCost: Double,
-  customerSatisfaction: Double
+  customerValue: Double
 )
 
 /**
@@ -952,7 +1141,7 @@ case class SolutionSummary(
   timestamp: String,
   expectedResponses: Double,
   totalCost: Double,
-  customerSatisfaction: Double,
+  customerValue: Double,
   totalAssignments: Int,
   maxHourlyLoad: Int,
   utilizationRate: Double,

@@ -108,7 +108,8 @@ object SimpleCampaignOptimizer {
     val problem = new CampaignSchedulingProblem(
       customers = customers,
       maxCustomersPerHour = maxCustomersPerHour,
-      campaignBudget = campaignBudget
+      campaignBudget = campaignBudget,
+      businessPriorityThreshold = 0.3 // Use improved threshold for better utilization
     )
     val problemStats = problem.getStatistics
     println(problemStats)
@@ -200,13 +201,14 @@ object SimpleCampaignOptimizer {
   
   private def saveSparkResults(solutions: java.util.List[DoubleSolution], problem: CampaignSchedulingProblem, spark: SparkSession): Unit = {
     val hdfsDirPath = s"hdfs://scluster/user/g1110566/campaign_optimization"
+    val localDirPath = s"/home/skinet/myfiles/aos_moo/data/simple_campaign_optimization"
     val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"))
     
     // Save Pareto front
     val output = new SolutionListOutput(solutions)
       .setSeparator("\t")
-      .setVarFileOutputContext(new DefaultFileOutputContext(s"VAR_simple_campaign_${timestamp}.tsv"))
-      .setFunFileOutputContext(new DefaultFileOutputContext(s"FUN_simple_campaign_${timestamp}.tsv"))
+      .setVarFileOutputContext(new DefaultFileOutputContext(s"${localDirPath}/VAR_simple_campaign_${timestamp}.tsv"))
+      .setFunFileOutputContext(new DefaultFileOutputContext(s"${localDirPath}/FUN_simple_campaign_${timestamp}.tsv"))
     
     output.print()
     
@@ -408,7 +410,8 @@ object SimpleCampaignOptimizer {
     val problem = new CampaignSchedulingProblem(
       customers = customers,
       maxCustomersPerHour = maxCustomersPerHour,
-      campaignBudget = campaignBudget
+      campaignBudget = campaignBudget,
+      businessPriorityThreshold = 0.3 // Use improved threshold for better utilization
     )
     val problemStats = problem.getStatistics
     println(problemStats)
@@ -700,14 +703,14 @@ object SimpleCampaignOptimizer {
           solutionMetrics = SolutionMetrics(
             expectedResponses = -solution.getObjective(0),
             totalCost = solution.getObjective(1),
-            customerSatisfaction = -solution.getObjective(2)
+            customerValue = -solution.getObjective(2)
           )
         )
       }
       
       val hdfsPath = s"${hdfsDirPath}/simple_schedule_${filename}"
       
-      val df = scheduleData.toList.toDF()
+      val df = scheduleData.toSeq.toDF()
       
       df.write
         .mode("overwrite")

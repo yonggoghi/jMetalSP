@@ -2,208 +2,222 @@ package org.uma.jmetalsp.spark.examples.campaign
 
 import org.uma.jmetal.problem.impl.AbstractDoubleProblem
 import org.uma.jmetal.solution.DoubleSolution
-
-import scala.collection.mutable
+import scala.collection.mutable.ArrayBuffer
 import scala.util.Random
-import java.util.{ArrayList, List => JavaList}
 
 /**
- * Multi-objective campaign message scheduling problem
- * 
- * This problem aims to optimize campaign message scheduling with the following characteristics:
- * - 10M customers (scaled down for demo)
- * - 60 time slots (hours)
- * - 4 sending channel types
- * 
- * Constraints:
- * - Minimum 48-hour sending interval per customer
- * - Maximum customers per hour capacity
+ * Multi-objective campaign scheduling problem with sophisticated time preferences
  * 
  * Objectives:
- * - Maximize overall response rate
- * - Minimize resource usage (secondary objective)
- * - Maximize customer satisfaction (balance across channels)
+ * 1. Maximize overall response rate (minimize negative response rate)
+ * 2. Maximize ARPU-weighted expected value (minimize negative ARPU-weighted value)
  * 
- * Solution encoding:
- * Each solution represents a scheduling matrix where variables encode:
- * - Customer assignment priorities
- * - Time slot preferences
- * - Channel selection weights
+ * Variables per customer: [timeSlot, channel, businessPriority]
+ * - timeSlot: continuous [0, 168) representing hour in the week (0-167)
+ * - channel: continuous [0, 4) representing communication channel (Email=0, SMS=1, Push=2, In-app=3)
+ * - businessPriority: continuous [0, 2] representing business-driven priority based on ARPU/LTV
+ * 
+ * Constraints:
+ * - Hourly capacity: max customers per hour across all channels
+ * - Budget constraint: total campaign cost
+ * - 48-hour minimum between contacts for same customer
+ * - Business priority threshold for assignment (ARPU-based)
  */
 class CampaignSchedulingProblem(
   val customers: Array[Customer],
-  val timeSlots: Int = 60,
-  val channels: Int = 4,
-  val maxCustomersPerHour: Int = 50000, // Capacity constraint
-  val campaignBudget: Double = 1000000.0 // Budget constraint
+  val maxCustomersPerHour: Int = 500,
+  val campaignBudget: Double = 50000.0,
+  val campaignDurationHours: Int = 168, // One week by default
+  val businessPriorityThreshold: Double = 0.3 // Configurable ARPU-based threshold
 ) extends AbstractDoubleProblem {
 
-  // Problem dimensions
-  private val numCustomers = customers.length
-  private val solutionLength = numCustomers * 3 // [timeSlot, channel, priority] per customer
+  // 3 variables per customer: timeSlot, channel, businessPriority
+  private val variablesPerCustomer = 3
+  private val totalVariables = customers.length * variablesPerCustomer
   
-  // Channel costs (per message)
-  private val channelCosts = Array(0.01, 0.05, 0.02, 0.03) // Email, SMS, Push, In-app
+  // 2 objectives: response rate and ARPU-weighted value
+  private val numberOfObjectives = 2
+  
+  // 2 constraints: capacity and budget
+  private val numberOfConstraints = 2
+  
+  // Cost per message by channel (in dollars)
+  private val channelCosts = Array(0.10, 0.25, 0.05, 0.15) // Email, SMS, Push, In-app
   
   // Initialize problem
-  setNumberOfVariables(solutionLength)
-  setNumberOfObjectives(3) // Response rate, cost efficiency, customer satisfaction
-  setNumberOfConstraints(2) // Capacity and budget constraints
+  setNumberOfVariables(totalVariables)
+  setNumberOfObjectives(numberOfObjectives)
+  setNumberOfConstraints(numberOfConstraints)
   setName("CampaignSchedulingProblem")
   
-  // Variable bounds using jMetal API
-  private val lowerLimits = new ArrayList[java.lang.Double](solutionLength)
-  private val upperLimits = new ArrayList[java.lang.Double](solutionLength)
+  // Set variable bounds
+  val lowerLimit = new java.util.ArrayList[java.lang.Double]()
+  val upperLimit = new java.util.ArrayList[java.lang.Double]()
   
-  for (i <- 0 until solutionLength) {
-    i % 3 match {
-      case 0 => // Time slot
-        lowerLimits.add(0.0)
-        upperLimits.add(timeSlots.toDouble - 1.0)
-      case 1 => // Channel
-        lowerLimits.add(0.0)
-        upperLimits.add(channels.toDouble - 1.0)
-      case 2 => // Priority/assignment probability
-        lowerLimits.add(0.0)
-        upperLimits.add(1.0)
-    }
+  for (i <- 0 until customers.length) {
+    lowerLimit.add(0.0)    // timeSlot: [0, 168)
+    upperLimit.add(168.0)
+    
+    lowerLimit.add(0.0)    // channel: [0, 4)
+    upperLimit.add(4.0)
+    
+    lowerLimit.add(0.0)    // businessPriority: [0, 2]
+    upperLimit.add(2.0)
   }
   
-  setLowerLimit(lowerLimits)
-  setUpperLimit(upperLimits)
+  setLowerLimit(lowerLimit)
+  setUpperLimit(upperLimit)
 
   override def evaluate(solution: DoubleSolution): Unit = {
     val schedule = decodeSchedule(solution)
-    val metrics = evaluateSchedule(schedule)
     
-    // Set objectives (to be maximized, so we negate for minimization)
-    solution.setObjective(0, -metrics.totalResponseRate) // Maximize response rate
-    solution.setObjective(1, metrics.totalCost)           // Minimize cost
-    solution.setObjective(2, -metrics.customerSatisfaction) // Maximize satisfaction
+    // Objective 1: Total expected response rate (negate for minimization)
+    val totalResponseRate = schedule.assignments.map(_.expectedResponseRate).sum
+    solution.setObjective(0, -totalResponseRate)
     
-    // Handle constraints using solution attributes (jMetal approach)
-    val capacityViolation = Math.max(0.0, metrics.maxHourlyLoad - maxCustomersPerHour)
-    val budgetViolation = Math.max(0.0, metrics.totalCost - campaignBudget)
+    // Objective 2: ARPU-weighted expected value (negate for minimization)
+    val arpuWeightedValue = schedule.assignments.map { assignment =>
+      val customer = customers(assignment.customerId.toInt)
+      val arpuWeight = customer.arpu / 50.0 // Normalize around $50 baseline
+      assignment.expectedResponseRate * customer.conversionValue * arpuWeight
+    }.sum
+    solution.setObjective(1, -arpuWeightedValue)
     
-    // Store constraint violations as attributes
+    // Constraint 1: Hourly capacity constraint
+    val maxHourlyLoad = schedule.hourlyLoads.max
+    val capacityViolation = Math.max(0.0, maxHourlyLoad - maxCustomersPerHour)
+    
+    // Constraint 2: Budget constraint
+    val totalCost = schedule.assignments.map(_.cost).sum
+    val budgetViolation = Math.max(0.0, totalCost - campaignBudget)
+    
+    // Store constraint violations as attributes (jMetal approach for handling constraints)
+    solution.setAttribute("CapacityViolation", capacityViolation)
+    solution.setAttribute("BudgetViolation", budgetViolation)
+    
+    // Store additional attributes for analysis
+    solution.setAttribute("TotalCost", totalCost)
+    solution.setAttribute("MaxHourlyLoad", maxHourlyLoad)
+    solution.setAttribute("TotalAssignments", schedule.assignments.length)
     solution.setAttribute("CapacityViolation", capacityViolation)
     solution.setAttribute("BudgetViolation", budgetViolation)
   }
 
   /**
-   * Decode solution variables into a concrete schedule
+   * Decode a solution into a campaign schedule
    */
   def decodeSchedule(solution: DoubleSolution): CampaignSchedule = {
-    val assignments = mutable.ArrayBuffer[CustomerAssignment]()
-    val hourlyLoads = Array.fill(timeSlots)(0)
+    val assignments = ArrayBuffer[CustomerAssignment]()
+    val hourlyLoads = Array.fill(campaignDurationHours)(0)
+    
+    // Statistics for debugging
+    var businessPriorityFilteredOut = 0
+    var capacityFilteredOut = 0
+    var contactConstraintFilteredOut = 0
+    var totalProcessed = 0
     
     for (customerId <- customers.indices) {
-      val baseIndex = customerId * 3
+      totalProcessed += 1
+      val customer = customers(customerId)
+      val baseIndex = customerId * variablesPerCustomer
+      
       val timeSlotRaw = solution.getVariableValue(baseIndex)
       val channelRaw = solution.getVariableValue(baseIndex + 1)
-      val priority = solution.getVariableValue(baseIndex + 2)
+      val businessPriorityRaw = solution.getVariableValue(baseIndex + 2)
       
-      // Apply threshold for assignment (only assign if priority > 0.3)
-      if (priority > 0.3) {
-        val timeSlot = Math.floor(timeSlotRaw).toInt
-        val channel = Math.floor(channelRaw).toInt
-        val customer = customers(customerId)
-        
-        // Check if assignment is valid (48-hour constraint)
-        if (customer.canBeContacted(timeSlot) && hourlyLoads(timeSlot) < maxCustomersPerHour) {
-          assignments += CustomerAssignment(
-            customerId = customer.id,
-            timeSlot = timeSlot,
-            channel = channel,
-            expectedResponseRate = customer.getResponseRate(timeSlot, channel),
-            cost = channelCosts(channel),
-            priority = priority
-          )
-          hourlyLoads(timeSlot) += 1
+      // Convert continuous variables to discrete values
+      val timeSlot = Math.floor(timeSlotRaw).toInt.min(campaignDurationHours - 1).max(0)
+      val channel = Math.floor(channelRaw).toInt.min(3).max(0)
+      
+      // Calculate actual business priority based on customer ARPU/LTV
+      val customerBusinessPriority = customer.getBusinessPriority
+      val finalPriority = (businessPriorityRaw / 2.0) * customerBusinessPriority // Scale by customer's business value
+      
+      // Check business priority threshold (ARPU-based filtering)
+      if (finalPriority < businessPriorityThreshold) {
+        businessPriorityFilteredOut += 1
+      } else {
+        // Check 48-hour contact constraint
+        if (!customer.canBeContacted(timeSlot)) {
+          contactConstraintFilteredOut += 1
+        } else {
+          // Check hourly capacity constraint
+          if (hourlyLoads(timeSlot) >= maxCustomersPerHour) {
+            capacityFilteredOut += 1
+          } else {
+            // Customer can be assigned - calculate assignment details
+            val responseRate = customer.getResponseRate(timeSlot, channel)
+            val timePreferenceMultiplier = customer.getTimePreferenceMultiplier(timeSlot)
+            val finalResponseRate = responseRate * timePreferenceMultiplier
+            
+            val cost = channelCosts(channel)
+            
+            assignments += CustomerAssignment(
+              customerId = customerId.toLong,
+              timeSlot = timeSlot,
+              channel = channel,
+              expectedResponseRate = finalResponseRate,
+              cost = cost,
+              priority = finalPriority
+            )
+            
+            hourlyLoads(timeSlot) += 1
+          }
         }
       }
     }
     
-    CampaignSchedule(assignments.toArray, hourlyLoads)
-  }
-
-  /**
-   * Evaluate the quality of a schedule
-   */
-  private def evaluateSchedule(schedule: CampaignSchedule): ScheduleMetrics = {
-    val assignments = schedule.assignments
+    // Store filtering statistics in solution for debugging
+    solution.setAttribute("BusinessPriorityFilteredOut", businessPriorityFilteredOut)
+    solution.setAttribute("ContactConstraintFilteredOut", contactConstraintFilteredOut)
+    solution.setAttribute("CapacityFilteredOut", capacityFilteredOut)
+    solution.setAttribute("TotalProcessed", totalProcessed)
     
-    // Calculate total expected response rate
-    val totalResponseRate = assignments.map(_.expectedResponseRate).sum
-    
-    // Calculate total cost
-    val totalCost = assignments.map(_.cost).sum
-    
-    // Calculate customer satisfaction (diversity and preference matching)
-    val customerSatisfaction = calculateCustomerSatisfaction(assignments)
-    
-    // Calculate maximum hourly load
-    val maxHourlyLoad = schedule.hourlyLoads.max
-    
-    // Calculate utilization efficiency
-    val utilizationEfficiency = assignments.length.toDouble / numCustomers
-    
-    ScheduleMetrics(
-      totalResponseRate = totalResponseRate,
-      totalCost = totalCost,
-      customerSatisfaction = customerSatisfaction,
-      maxHourlyLoad = maxHourlyLoad,
-      utilizationEfficiency = utilizationEfficiency,
-      totalAssignments = assignments.length
+    CampaignSchedule(
+      assignments = assignments.toArray,
+      hourlyLoads = hourlyLoads,
+      totalCost = assignments.map(_.cost).sum,
+      totalExpectedResponses = assignments.map(_.expectedResponseRate).sum
     )
-  }
-
-  /**
-   * Calculate customer satisfaction based on channel preferences and diversity
-   */
-  private def calculateCustomerSatisfaction(assignments: Array[CustomerAssignment]): Double = {
-    if (assignments.isEmpty) return 0.0
-    
-    // Group assignments by customer
-    val customerAssignments = assignments.groupBy(_.customerId)
-    
-    val satisfactionScores = for {
-      (customerId, customerAssigns) <- customerAssignments
-      customer = customers.find(_.id == customerId).get
-    } yield {
-      val channelsUsed = customerAssigns.map(_.channel).toSet
-      val preferredChannelsUsed = channelsUsed.intersect(customer.preferredChannels)
-      
-      // Base satisfaction from using preferred channels
-      val preferenceScore = preferredChannelsUsed.size.toDouble / Math.max(1, customer.preferredChannels.size)
-      
-      // Bonus for reasonable frequency (not too many messages)
-      val frequencyScore = if (customerAssigns.length <= 3) 1.0 else 1.0 / customerAssigns.length
-      
-      preferenceScore * frequencyScore
-    }
-    
-    satisfactionScores.sum / customerAssignments.size
   }
 
   /**
    * Get problem statistics for reporting
    */
   def getStatistics: ProblemStatistics = {
+    val totalCustomers = customers.length
+    val totalTimeSlots = campaignDurationHours
+    val totalChannels = 4
+    val maxPossibleAssignments = totalCustomers.toLong
+    val maxTheoreticalHourlyLoad = totalCustomers
+    
+    // Calculate business value distribution
+    val customerPriorities = customers.map(_.getBusinessPriority)
+    val avgPriority = customerPriorities.sum / customerPriorities.length
+    val highPriorityCustomers = customerPriorities.count(_ > 1.0)
+    
+    val totalBudgetIfAllAssigned = customers.length * channelCosts.min // Minimum cost scenario
+    val avgArpu = customers.map(_.arpu).sum / customers.length
+    
     ProblemStatistics(
-      numCustomers = numCustomers,
-      timeSlots = timeSlots,
-      channels = channels,
+      totalCustomers = totalCustomers,
+      totalTimeSlots = totalTimeSlots,
+      totalChannels = totalChannels,
+      maxPossibleAssignments = maxPossibleAssignments,
       maxCustomersPerHour = maxCustomersPerHour,
       campaignBudget = campaignBudget,
-      solutionLength = solutionLength,
-      searchSpaceSize = Math.pow(timeSlots * channels * 2, numCustomers) // Rough estimate
+      maxTheoreticalHourlyLoad = maxTheoreticalHourlyLoad,
+      budgetUtilizationIfAllAssigned = totalBudgetIfAllAssigned / campaignBudget,
+      businessPriorityThreshold = businessPriorityThreshold,
+      averageCustomerPriority = avgPriority,
+      highPriorityCustomerCount = highPriorityCustomers,
+      averageArpu = avgArpu
     )
   }
 }
 
 /**
- * Represents an assignment of a customer to a time slot and channel
+ * Represents a customer assignment in the campaign schedule
  */
 case class CustomerAssignment(
   customerId: Long,
@@ -219,71 +233,54 @@ case class CustomerAssignment(
  */
 case class CampaignSchedule(
   assignments: Array[CustomerAssignment],
-  hourlyLoads: Array[Int]
-) {
-  
-  def getTotalExpectedResponses: Double = assignments.map(_.expectedResponseRate).sum
-  def getTotalCost: Double = assignments.map(_.cost).sum
-  def getAssignmentCount: Int = assignments.length
-  def getMaxHourlyLoad: Int = hourlyLoads.max
-  def getAverageHourlyLoad: Double = hourlyLoads.sum.toDouble / hourlyLoads.length
-  
-  /**
-   * Get assignments for a specific time slot
-   */
-  def getAssignmentsForTimeSlot(timeSlot: Int): Array[CustomerAssignment] = {
-    assignments.filter(_.timeSlot == timeSlot)
-  }
-  
-  /**
-   * Get assignments for a specific channel
-   */
-  def getAssignmentsForChannel(channel: Int): Array[CustomerAssignment] = {
-    assignments.filter(_.channel == channel)
-  }
-  
-  override def toString: String = {
-    s"""Campaign Schedule Summary:
-       |  Total assignments: ${getAssignmentCount}
-       |  Expected responses: ${getTotalExpectedResponses}
-       |  Total cost: $$${getTotalCost}
-       |  Max hourly load: ${getMaxHourlyLoad}
-       |  Average hourly load: ${getAverageHourlyLoad}""".stripMargin
-  }
-}
+  hourlyLoads: Array[Int],
+  totalCost: Double,
+  totalExpectedResponses: Double
+)
 
 /**
- * Metrics for evaluating a schedule
+ * Performance metrics for a schedule
  */
 case class ScheduleMetrics(
   totalResponseRate: Double,
   totalCost: Double,
-  customerSatisfaction: Double,
+  customerValue: Double, // ARPU-weighted value
   maxHourlyLoad: Int,
-  utilizationEfficiency: Double,
-  totalAssignments: Int
+  utilizationEfficiency: Double, // Percentage of customers assigned
+  costPerResponse: Double,
+  arpuWeightedROI: Double, // Value/Cost ratio
+  channelDistribution: Map[Int, Int] // Channel -> count
 )
 
 /**
- * Problem statistics for reporting
+ * Problem configuration and statistics
  */
 case class ProblemStatistics(
-  numCustomers: Int,
-  timeSlots: Int,
-  channels: Int,
+  totalCustomers: Int,
+  totalTimeSlots: Int,
+  totalChannels: Int,
+  maxPossibleAssignments: Long,
   maxCustomersPerHour: Int,
   campaignBudget: Double,
-  solutionLength: Int,
-  searchSpaceSize: Double
+  maxTheoreticalHourlyLoad: Int,
+  budgetUtilizationIfAllAssigned: Double,
+  businessPriorityThreshold: Double,
+  averageCustomerPriority: Double,
+  highPriorityCustomerCount: Int,
+  averageArpu: Double
 ) {
   override def toString: String = {
-    s"""Problem Statistics:
-       |  Customers: $numCustomers
-       |  Time slots: $timeSlots hours
-       |  Channels: $channels
-       |  Max customers/hour: $maxCustomersPerHour
-       |  Campaign budget: $$${campaignBudget}
-       |  Solution length: $solutionLength variables
-       |  Search space size: ~${searchSpaceSize.toInt} combinations""".stripMargin
+    f"""Problem Statistics:
+       |  Total customers: $totalCustomers
+       |  Campaign duration: $totalTimeSlots hours (${totalTimeSlots/24} days)
+       |  Available channels: $totalChannels
+       |  Max customers per hour: $maxCustomersPerHour
+       |  Campaign budget: $$${campaignBudget}%.2f
+       |  Business priority threshold: ${businessPriorityThreshold}%.2f
+       |  Average customer priority: ${averageCustomerPriority}%.3f
+       |  High priority customers (>1.0): $highPriorityCustomerCount
+       |  Average customer ARPU: $$${averageArpu}%.2f/month
+       |  Max theoretical hourly load: $maxTheoreticalHourlyLoad
+       |  Budget utilization if all assigned: ${budgetUtilizationIfAllAssigned * 100}%.1f%%""".stripMargin
   }
 } 
