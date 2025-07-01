@@ -1,0 +1,1072 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "jmetalsp-algorithm-test",
+        "directory": "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm",
+        "workspaceDir": "/Users/1110566/workspace/jMetalSP",
+        "sources": [
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/src/test/java"
+        ],
+        "dependencies": [
+            "jmetalsp-algorithm",
+            "jmetalsp",
+            "jmetalsp-core",
+            "jmetalsp-observeddata",
+            "jmetalsp-problem"
+        ],
+        "classpath": [
+            "/Users/1110566/workspace/jMetalSP/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/target/classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-core/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-core/target/classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-observeddata/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-observeddata/target/classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-problem/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-problem/target/classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/target/classes",
+            "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-core/5.9/jmetal-core-5.9.jar",
+            "/Users/1110566/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar",
+            "/Users/1110566/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar",
+            "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar",
+            "/Users/1110566/.m2/repository/org/knowm/xchart/xchart/3.2.2/xchart-3.2.2.jar",
+            "/Users/1110566/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.11/VectorGraphics2D-0.11.jar",
+            "/Users/1110566/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar",
+            "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/weka-stable/3.8.1/weka-stable-3.8.1.jar",
+            "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b/2015.03.26/java-cup-11b-2015.03.26.jar",
+            "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b-runtime/2015.03.26/java-cup-11b-runtime-2015.03.26.jar",
+            "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/bounce/0.18/bounce-0.18.jar",
+            "/Users/1110566/.m2/repository/com/googlecode/matrix-toolkits-java/mtj/1.0.4/mtj-1.0.4.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/jniloader/1.1/jniloader-1.1.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1-natives.jar",
+            "/Users/1110566/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar",
+            "/Users/1110566/.m2/repository/com/googlecode/netlib-java/netlib-java/1.1/netlib-java-1.1.jar",
+            "/Users/1110566/.m2/repository/com/github/fommil/netlib/core/1.1/core-1.1.jar",
+            "/Users/1110566/.m2/repository/org/apache/kafka/kafka-streams/1.1.0/kafka-streams-1.1.0.jar",
+            "/Users/1110566/.m2/repository/org/apache/kafka/connect-json/1.1.0/connect-json-1.1.0.jar",
+            "/Users/1110566/.m2/repository/org/apache/kafka/connect-api/1.1.0/connect-api-1.1.0.jar",
+            "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.4/jackson-databind-2.9.4.jar",
+            "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar",
+            "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.4/jackson-core-2.9.4.jar",
+            "/Users/1110566/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar",
+            "/Users/1110566/.m2/repository/org/rocksdb/rocksdbjni/5.7.3/rocksdbjni-5.7.3.jar",
+            "/Users/1110566/.m2/repository/org/apache/kafka/kafka-clients/1.1.0/kafka-clients-1.1.0.jar",
+            "/Users/1110566/.m2/repository/org/lz4/lz4-java/1.4/lz4-java-1.4.jar",
+            "/Users/1110566/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.1/snappy-java-1.1.7.1.jar",
+            "/Users/1110566/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar",
+            "/Users/1110566/.m2/repository/com/cedarsoftware/json-io/4.10.0/json-io-4.10.0.jar",
+            "/Users/1110566/.m2/repository/org/apache/avro/avro/1.8.2/avro-1.8.2.jar",
+            "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar",
+            "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar",
+            "/Users/1110566/.m2/repository/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar",
+            "/Users/1110566/.m2/repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar",
+            "/Users/1110566/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar",
+            "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-algorithm/5.9/jmetal-algorithm-5.9.jar",
+            "/Users/1110566/.m2/repository/com/fuzzylite/jfuzzylite/5.0/jfuzzylite-5.0.jar",
+            "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-problem/5.9/jmetal-problem-5.9.jar",
+            "/Users/1110566/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar",
+            "/Users/1110566/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar",
+            "/Users/1110566/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar",
+            "/Users/1110566/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar",
+            "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+            "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar"
+        ],
+        "out": "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/target",
+        "classesDir": "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/target/test-classes",
+        "resources": [
+            "/Users/1110566/workspace/jMetalSP/jmetalsp-algorithm/src/test/resources"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.0",
+            "options": [
+                
+            ],
+            "jars": [
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-compiler/2.12.0/scala-compiler-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-reflect/2.12.0/scala-reflect-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/modules/scala-xml_2.12/1.0.5/scala-xml_2.12-1.0.5.jar",
+                "/Users/1110566/.m2/repository/jline/jline/2.14.1/jline-2.14.1.jar"
+            ],
+            "setup": {
+                "order": "java->scala",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                "-g",
+                "-encoding",
+                "UTF-8"
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework",
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    {
+                        "args": [
+                            "-v",
+                            "-a"
+                        ],
+                        "framework": {
+                            "names": [
+                                "com.novocode.junit.JUnitFramework"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-compress",
+                    "version": "1.8.1",
+                    "artifacts": [
+                        {
+                            "name": "commons-compress",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1.jar"
+                        },
+                        {
+                            "name": "commons-compress",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-compress/1.8.1/commons-compress-1.8.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.uma.jmetal",
+                    "name": "jmetal-algorithm",
+                    "version": "5.9",
+                    "artifacts": [
+                        {
+                            "name": "jmetal-algorithm",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-algorithm/5.9/jmetal-algorithm-5.9.jar"
+                        },
+                        {
+                            "name": "jmetal-algorithm",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-algorithm/5.9/jmetal-algorithm-5.9-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.kafka",
+                    "name": "connect-json",
+                    "version": "1.1.0",
+                    "artifacts": [
+                        {
+                            "name": "connect-json",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/connect-json/1.1.0/connect-json-1.1.0.jar"
+                        },
+                        {
+                            "name": "connect-json",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/connect-json/1.1.0/connect-json-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "nz.ac.waikato.cms.weka.thirdparty",
+                    "name": "java-cup-11b",
+                    "version": "2015.03.26",
+                    "artifacts": [
+                        {
+                            "name": "java-cup-11b",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b/2015.03.26/java-cup-11b-2015.03.26.jar"
+                        },
+                        {
+                            "name": "java-cup-11b",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b/2015.03.26/java-cup-11b-2015.03.26-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.codehaus.jackson",
+                    "name": "jackson-mapper-asl",
+                    "version": "1.9.13",
+                    "artifacts": [
+                        {
+                            "name": "jackson-mapper-asl",
+                            "path": "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar"
+                        },
+                        {
+                            "name": "jackson-mapper-asl",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.googlecode.netlib-java",
+                    "name": "netlib-java",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-java",
+                            "path": "/Users/1110566/.m2/repository/com/googlecode/netlib-java/netlib-java/1.1/netlib-java-1.1.jar"
+                        },
+                        {
+                            "name": "netlib-java",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/googlecode/netlib-java/netlib-java/1.1/netlib-java-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.lz4",
+                    "name": "lz4-java",
+                    "version": "1.4",
+                    "artifacts": [
+                        {
+                            "name": "lz4-java",
+                            "path": "/Users/1110566/.m2/repository/org/lz4/lz4-java/1.4/lz4-java-1.4.jar"
+                        },
+                        {
+                            "name": "lz4-java",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/lz4/lz4-java/1.4/lz4-java-1.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.hamcrest",
+                    "name": "hamcrest-all",
+                    "version": "1.3",
+                    "artifacts": [
+                        {
+                            "name": "hamcrest-all",
+                            "path": "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar"
+                        },
+                        {
+                            "name": "hamcrest-all",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "native_ref-java",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "native_ref-java",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1.jar"
+                        },
+                        {
+                            "name": "native_ref-java",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_ref-java/1.1/native_ref-java-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.kafka",
+                    "name": "kafka-clients",
+                    "version": "1.1.0",
+                    "artifacts": [
+                        {
+                            "name": "kafka-clients",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/kafka-clients/1.1.0/kafka-clients-1.1.0.jar"
+                        },
+                        {
+                            "name": "kafka-clients",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/kafka-clients/1.1.0/kafka-clients-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "native_system-java",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "native_system-java",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1.jar"
+                        },
+                        {
+                            "name": "native_system-java",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/native_system-java/1.1/native_system-java-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-databind",
+                    "version": "2.9.4",
+                    "artifacts": [
+                        {
+                            "name": "jackson-databind",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.4/jackson-databind-2.9.4.jar"
+                        },
+                        {
+                            "name": "jackson-databind",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.4/jackson-databind-2.9.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-linux-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-linux-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-x86_64/1.1/netlib-native_system-linux-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-osx-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-osx-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-osx-x86_64/1.1/netlib-native_ref-osx-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-linux-armhf",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-linux-armhf",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-armhf/1.1/netlib-native_system-linux-armhf-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-math3",
+                    "version": "3.6.1",
+                    "artifacts": [
+                        {
+                            "name": "commons-math3",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar"
+                        },
+                        {
+                            "name": "commons-math3",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.cedarsoftware",
+                    "name": "json-io",
+                    "version": "4.10.0",
+                    "artifacts": [
+                        {
+                            "name": "json-io",
+                            "path": "/Users/1110566/.m2/repository/com/cedarsoftware/json-io/4.10.0/json-io-4.10.0.jar"
+                        },
+                        {
+                            "name": "json-io",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/cedarsoftware/json-io/4.10.0/json-io-4.10.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-linux-i686",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-linux-i686",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-i686/1.1/netlib-native_ref-linux-i686-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.kafka",
+                    "name": "kafka-streams",
+                    "version": "1.1.0",
+                    "artifacts": [
+                        {
+                            "name": "kafka-streams",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/kafka-streams/1.1.0/kafka-streams-1.1.0.jar"
+                        },
+                        {
+                            "name": "kafka-streams",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/kafka-streams/1.1.0/kafka-streams-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-win-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-win-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-x86_64/1.1/netlib-native_system-win-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-osx-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-osx-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-osx-x86_64/1.1/netlib-native_system-osx-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "nz.ac.waikato.cms.weka.thirdparty",
+                    "name": "java-cup-11b-runtime",
+                    "version": "2015.03.26",
+                    "artifacts": [
+                        {
+                            "name": "java-cup-11b-runtime",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b-runtime/2015.03.26/java-cup-11b-runtime-2015.03.26.jar"
+                        },
+                        {
+                            "name": "java-cup-11b-runtime",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/java-cup-11b-runtime/2015.03.26/java-cup-11b-runtime-2015.03.26-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.0",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-linux-i686",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-linux-i686",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-linux-i686/1.1/netlib-native_system-linux-i686-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "nz.ac.waikato.cms.weka.thirdparty",
+                    "name": "bounce",
+                    "version": "0.18",
+                    "artifacts": [
+                        {
+                            "name": "bounce",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/bounce/0.18/bounce-0.18.jar"
+                        },
+                        {
+                            "name": "bounce",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/thirdparty/bounce/0.18/bounce-0.18-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-linux-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-linux-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-x86_64/1.1/netlib-native_ref-linux-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-annotations",
+                    "version": "2.9.0",
+                    "artifacts": [
+                        {
+                            "name": "jackson-annotations",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar"
+                        },
+                        {
+                            "name": "jackson-annotations",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "de.erichseifert.vectorgraphics2d",
+                    "name": "VectorGraphics2D",
+                    "version": "0.11",
+                    "artifacts": [
+                        {
+                            "name": "VectorGraphics2D",
+                            "path": "/Users/1110566/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.11/VectorGraphics2D-0.11.jar"
+                        },
+                        {
+                            "name": "VectorGraphics2D",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/de/erichseifert/vectorgraphics2d/VectorGraphics2D/0.11/VectorGraphics2D-0.11-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.googlecode.matrix-toolkits-java",
+                    "name": "mtj",
+                    "version": "1.0.4",
+                    "artifacts": [
+                        {
+                            "name": "mtj",
+                            "path": "/Users/1110566/.m2/repository/com/googlecode/matrix-toolkits-java/mtj/1.0.4/mtj-1.0.4.jar"
+                        },
+                        {
+                            "name": "mtj",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/googlecode/matrix-toolkits-java/mtj/1.0.4/mtj-1.0.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "junit",
+                    "name": "junit",
+                    "version": "4.13.1",
+                    "artifacts": [
+                        {
+                            "name": "junit",
+                            "path": "/Users/1110566/.m2/repository/junit/junit/4.13.1/junit-4.13.1.jar"
+                        },
+                        {
+                            "name": "junit",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/junit/junit/4.13.1/junit-4.13.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "commons-io",
+                    "name": "commons-io",
+                    "version": "2.4",
+                    "artifacts": [
+                        {
+                            "name": "commons-io",
+                            "path": "/Users/1110566/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar"
+                        },
+                        {
+                            "name": "commons-io",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.google.code.gson",
+                    "name": "gson",
+                    "version": "2.8.5",
+                    "artifacts": [
+                        {
+                            "name": "gson",
+                            "path": "/Users/1110566/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar"
+                        },
+                        {
+                            "name": "gson",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-linux-armhf",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-linux-armhf",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-linux-armhf/1.1/netlib-native_ref-linux-armhf-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.uma.jmetal",
+                    "name": "jmetal-core",
+                    "version": "5.9",
+                    "artifacts": [
+                        {
+                            "name": "jmetal-core",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-core/5.9/jmetal-core-5.9.jar"
+                        },
+                        {
+                            "name": "jmetal-core",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-core/5.9/jmetal-core-5.9-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.hamcrest",
+                    "name": "hamcrest-core",
+                    "version": "1.3",
+                    "artifacts": [
+                        {
+                            "name": "hamcrest-core",
+                            "path": "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"
+                        },
+                        {
+                            "name": "hamcrest-core",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.kafka",
+                    "name": "connect-api",
+                    "version": "1.1.0",
+                    "artifacts": [
+                        {
+                            "name": "connect-api",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/connect-api/1.1.0/connect-api-1.1.0.jar"
+                        },
+                        {
+                            "name": "connect-api",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/kafka/connect-api/1.1.0/connect-api-1.1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-win-x86_64",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-win-x86_64",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-x86_64/1.1/netlib-native_ref-win-x86_64-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.slf4j",
+                    "name": "slf4j-api",
+                    "version": "1.7.25",
+                    "artifacts": [
+                        {
+                            "name": "slf4j-api",
+                            "path": "/Users/1110566/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar"
+                        },
+                        {
+                            "name": "slf4j-api",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-lang3",
+                    "version": "3.4",
+                    "artifacts": [
+                        {
+                            "name": "commons-lang3",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar"
+                        },
+                        {
+                            "name": "commons-lang3",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.avro",
+                    "name": "avro",
+                    "version": "1.8.2",
+                    "artifacts": [
+                        {
+                            "name": "avro",
+                            "path": "/Users/1110566/.m2/repository/org/apache/avro/avro/1.8.2/avro-1.8.2.jar"
+                        },
+                        {
+                            "name": "avro",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/avro/avro/1.8.2/avro-1.8.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fasterxml.jackson.core",
+                    "name": "jackson-core",
+                    "version": "2.9.4",
+                    "artifacts": [
+                        {
+                            "name": "jackson-core",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.4/jackson-core-2.9.4.jar"
+                        },
+                        {
+                            "name": "jackson-core",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.4/jackson-core-2.9.4-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.rocksdb",
+                    "name": "rocksdbjni",
+                    "version": "5.7.3",
+                    "artifacts": [
+                        {
+                            "name": "rocksdbjni",
+                            "path": "/Users/1110566/.m2/repository/org/rocksdb/rocksdbjni/5.7.3/rocksdbjni-5.7.3.jar"
+                        },
+                        {
+                            "name": "rocksdbjni",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/rocksdb/rocksdbjni/5.7.3/rocksdbjni-5.7.3-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "net.sourceforge.f2j",
+                    "name": "arpack_combined_all",
+                    "version": "0.1",
+                    "artifacts": [
+                        {
+                            "name": "arpack_combined_all",
+                            "path": "/Users/1110566/.m2/repository/net/sourceforge/f2j/arpack_combined_all/0.1/arpack_combined_all-0.1.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.codehaus.jackson",
+                    "name": "jackson-core-asl",
+                    "version": "1.9.13",
+                    "artifacts": [
+                        {
+                            "name": "jackson-core-asl",
+                            "path": "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"
+                        },
+                        {
+                            "name": "jackson-core-asl",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.commons",
+                    "name": "commons-collections4",
+                    "version": "4.2",
+                    "artifacts": [
+                        {
+                            "name": "commons-collections4",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar"
+                        },
+                        {
+                            "name": "commons-collections4",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.knowm.xchart",
+                    "name": "xchart",
+                    "version": "3.2.2",
+                    "artifacts": [
+                        {
+                            "name": "xchart",
+                            "path": "/Users/1110566/.m2/repository/org/knowm/xchart/xchart/3.2.2/xchart-3.2.2.jar"
+                        },
+                        {
+                            "name": "xchart",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/knowm/xchart/xchart/3.2.2/xchart-3.2.2-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.xerial.snappy",
+                    "name": "snappy-java",
+                    "version": "1.1.7.1",
+                    "artifacts": [
+                        {
+                            "name": "snappy-java",
+                            "path": "/Users/1110566/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.1/snappy-java-1.1.7.1.jar"
+                        },
+                        {
+                            "name": "snappy-java",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/xerial/snappy/snappy-java/1.1.7.1/snappy-java-1.1.7.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.maven.doxia",
+                    "name": "doxia-sink-api",
+                    "version": "1.0",
+                    "artifacts": [
+                        {
+                            "name": "doxia-sink-api",
+                            "path": "/Users/1110566/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar"
+                        },
+                        {
+                            "name": "doxia-sink-api",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "nz.ac.waikato.cms.weka",
+                    "name": "weka-stable",
+                    "version": "3.8.1",
+                    "artifacts": [
+                        {
+                            "name": "weka-stable",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/weka-stable/3.8.1/weka-stable-3.8.1.jar"
+                        },
+                        {
+                            "name": "weka-stable",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/nz/ac/waikato/cms/weka/weka-stable/3.8.1/weka-stable-3.8.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.fuzzylite",
+                    "name": "jfuzzylite",
+                    "version": "5.0",
+                    "artifacts": [
+                        {
+                            "name": "jfuzzylite",
+                            "path": "/Users/1110566/.m2/repository/com/fuzzylite/jfuzzylite/5.0/jfuzzylite-5.0.jar"
+                        },
+                        {
+                            "name": "jfuzzylite",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/fuzzylite/jfuzzylite/5.0/jfuzzylite-5.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.thoughtworks.paranamer",
+                    "name": "paranamer",
+                    "version": "2.7",
+                    "artifacts": [
+                        {
+                            "name": "paranamer",
+                            "path": "/Users/1110566/.m2/repository/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar"
+                        },
+                        {
+                            "name": "paranamer",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_ref-win-i686",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_ref-win-i686",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_ref-win-i686/1.1/netlib-native_ref-win-i686-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil",
+                    "name": "jniloader",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "jniloader",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/jniloader/1.1/jniloader-1.1.jar"
+                        },
+                        {
+                            "name": "jniloader",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/jniloader/1.1/jniloader-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "core",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "core",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/core/1.1/core-1.1.jar"
+                        },
+                        {
+                            "name": "core",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/core/1.1/core-1.1-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.apache.maven.reporting",
+                    "name": "maven-reporting-api",
+                    "version": "3.0",
+                    "artifacts": [
+                        {
+                            "name": "maven-reporting-api",
+                            "path": "/Users/1110566/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar"
+                        },
+                        {
+                            "name": "maven-reporting-api",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.tukaani",
+                    "name": "xz",
+                    "version": "1.5",
+                    "artifacts": [
+                        {
+                            "name": "xz",
+                            "path": "/Users/1110566/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar"
+                        },
+                        {
+                            "name": "xz",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/tukaani/xz/1.5/xz-1.5-sources.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "com.github.fommil.netlib",
+                    "name": "netlib-native_system-win-i686",
+                    "version": "1.1",
+                    "artifacts": [
+                        {
+                            "name": "netlib-native_system-win-i686",
+                            "classifier": "natives",
+                            "path": "/Users/1110566/.m2/repository/com/github/fommil/netlib/netlib-native_system-win-i686/1.1/netlib-native_system-win-i686-1.1-natives.jar"
+                        }
+                    ]
+                },
+                {
+                    "organization": "org.uma.jmetal",
+                    "name": "jmetal-problem",
+                    "version": "5.9",
+                    "artifacts": [
+                        {
+                            "name": "jmetal-problem",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-problem/5.9/jmetal-problem-5.9.jar"
+                        },
+                        {
+                            "name": "jmetal-problem",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/uma/jmetal/jmetal-problem/5.9/jmetal-problem-5.9-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}

@@ -93,7 +93,7 @@ To run the examples that do not use Spark you need:
 * jMetal 5.7
 
 To execute the codes with Spark:
-* Spark 2.3.0 or later
+* Spark 3.1.0 or later
 
 ## References
 * José A. Cordero, Antonio J. Nebro, Juan J. Durillo, José García-Nieto, Ismael Navas-Delgado, José F. Aldana-Montes: "Dynamic Multi-Objective Optimization With jMetal and Spark: a Case Study". MOD 2016 ([DOI](http://dx.doi.org/10.1007/978-3-319-51469-7_9)).

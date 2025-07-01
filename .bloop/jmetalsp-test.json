@@ -1,0 +1,144 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "jmetalsp-test",
+        "directory": "/Users/1110566/workspace/jMetalSP",
+        "workspaceDir": "/Users/1110566/workspace/jMetalSP",
+        "sources": [
+            
+        ],
+        "dependencies": [
+            "jmetalsp"
+        ],
+        "classpath": [
+            "/Users/1110566/workspace/jMetalSP/target/test-classes",
+            "/Users/1110566/workspace/jMetalSP/target/classes",
+            "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar"
+        ],
+        "out": "/Users/1110566/workspace/jMetalSP/target",
+        "classesDir": "/Users/1110566/workspace/jMetalSP/target/test-classes",
+        "resources": [
+            "/Users/1110566/workspace/jMetalSP/src/test/resources"
+        ],
+        "scala": {
+            "organization": "org.scala-lang",
+            "name": "scala-compiler",
+            "version": "2.12.0",
+            "options": [
+                
+            ],
+            "jars": [
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-compiler/2.12.0/scala-compiler-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/scala-reflect/2.12.0/scala-reflect-2.12.0.jar",
+                "/Users/1110566/.m2/repository/org/scala-lang/modules/scala-xml_2.12/1.0.5/scala-xml_2.12-1.0.5.jar",
+                "/Users/1110566/.m2/repository/jline/jline/2.14.1/jline-2.14.1.jar"
+            ],
+            "setup": {
+                "order": "java->scala",
+                "addLibraryToBootClasspath": true,
+                "addCompilerToClasspath": false,
+                "addExtraJarsToClasspath": false,
+                "manageBootClasspath": true,
+                "filterLibraryFromClasspath": true
+            }
+        },
+        "java": {
+            "options": [
+                "-g",
+                "-encoding",
+                "UTF-8"
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework",
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    {
+                        "args": [
+                            "-v",
+                            "-a"
+                        ],
+                        "framework": {
+                            "names": [
+                                "com.novocode.junit.JUnitFramework"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                {
+                    "organization": "org.scala-lang",
+                    "name": "scala-library",
+                    "version": "2.12.0",
+                    "artifacts": [
+                        {
+                            "name": "scala-library",
+                            "path": "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0.jar"
+                        },
+                        {
+                            "name": "scala-library",
+                            "classifier": "sources",
+                            "path": "/Users/1110566/.m2/repository/org/scala-lang/scala-library/2.12.0/scala-library-2.12.0-sources.jar"
+                        }
+                    ]
+                }
+            ]
+        },
+        "tags": [
+            "test"
+        ]
+    }
+}
