@@ -85,6 +85,10 @@ object CampaignSchedulingOptimizer {
     var businessPriorityThreshold = 0.3 // Lowered from 0.5 for better utilization
     var sparkMaster: Option[String] = None
     var enableCheckpointing = true
+    var customerBatchSize = 50000
+    var solutionCacheLevel = "MEMORY_AND_DISK_SER"
+    var checkpointInterval = 100
+    var maxConcurrentTasks = 800
     
     var i = 0
     while (i < args.length) {
@@ -121,6 +125,18 @@ object CampaignSchedulingOptimizer {
           if (i < args.length) sparkMaster = Some(args(i))
         case "--disable-checkpointing" =>
           enableCheckpointing = false
+        case "--customer-batch-size" =>
+          i += 1
+          if (i < args.length) customerBatchSize = args(i).toInt
+        case "--solution-cache-level" =>
+          i += 1
+          if (i < args.length) solutionCacheLevel = args(i)
+        case "--checkpoint-interval" =>
+          i += 1
+          if (i < args.length) checkpointInterval = args(i).toInt
+        case "--max-concurrent-tasks" =>
+          i += 1
+          if (i < args.length) maxConcurrentTasks = args(i).toInt
         case "--help" =>
           printUsage()
           System.exit(0)
@@ -143,7 +159,11 @@ object CampaignSchedulingOptimizer {
       campaignBudget = campaignBudget,
       businessPriorityThreshold = businessPriorityThreshold,
       sparkMaster = sparkMaster,
-      enableCheckpointing = enableCheckpointing
+      enableCheckpointing = enableCheckpointing,
+      customerBatchSize = customerBatchSize,
+      solutionCacheLevel = solutionCacheLevel,
+      checkpointInterval = checkpointInterval,
+      maxConcurrentTasks = maxConcurrentTasks
     )
   }
   
@@ -162,6 +182,10 @@ object CampaignSchedulingOptimizer {
     println("  --business-priority-threshold <double> Business priority threshold (default: 0.3)")
     println("  --spark-master <string>              Spark master URL (default: auto-detect)")
     println("  --disable-checkpointing              Disable Spark checkpointing")
+    println("  --customer-batch-size <int>           Customer batch size (default: 50000)")
+    println("  --solution-cache-level <string>       Solution cache level (default: MEMORY_AND_DISK_SER)")
+    println("  --checkpoint-interval <int>          Checkpoint interval (default: 100)")
+    println("  --max-concurrent-tasks <int>         Maximum concurrent tasks (default: 800)")
     println("  --help                               Show this help message")
     println()
     println("Examples:")
@@ -209,7 +233,11 @@ class CampaignSchedulingOptimizer {
     campaignBudget: Double = 50000.0, // Scale down for demo
     businessPriorityThreshold: Double = 0.3, // ARPU-based business priority threshold
     sparkMaster: Option[String] = None, // Auto-detect if None
-    enableCheckpointing: Boolean = true
+    enableCheckpointing: Boolean = true,
+    customerBatchSize: Int = 50000,        // Process customers in batches
+    solutionCacheLevel: String = "MEMORY_AND_DISK_SER",
+    checkpointInterval: Int = 100,         // Checkpoint every 100 generations
+    maxConcurrentTasks: Int = 800          // Match parallelism
   )
   
   case class OptimizationResults(
@@ -367,7 +395,7 @@ class CampaignSchedulingOptimizer {
     
     // Step 1: Generate/Load customer data
     println("Step 1: Loading customer data...")
-    val customers = loadCustomerData(config, spark)
+    val customers = loadCustomerDataOptimized(config, spark)
     val customerStats = Customer.getStatistics(customers)
     println(customerStats)
     
@@ -453,6 +481,46 @@ class CampaignSchedulingOptimizer {
       val builder = SparkSession.builder()
         .appName("Campaign Scheduling Optimization with jMetalSP")
         .master(masterUrl)
+        // CRITICAL: Memory and serialization optimizations for large tasks
+        .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+        .config("spark.kryo.registrationRequired", "false")
+        .config("spark.kryo.unsafe", "true")
+        .config("spark.kryo.referenceTracking", "false")
+        .config("spark.kryoserializer.buffer.max", "2047m")  // Must be < 2048MB
+        .config("spark.kryoserializer.buffer", "256m")
+        .config("spark.serializer.objectStreamReset", "100")
+        
+        // Memory management for large datasets
+        .config("spark.executor.memory", "28g")
+        .config("spark.executor.memoryFraction", "0.8")
+        .config("spark.executor.memoryOverhead", "4g")
+        .config("spark.driver.memory", "8g")
+        .config("spark.driver.memoryOverhead", "2g")
+        .config("spark.driver.maxResultSize", "4g")
+        
+        // Task and shuffle optimizations
+        .config("spark.sql.execution.arrow.maxRecordsPerBatch", "1000")
+        .config("spark.sql.adaptive.enabled", "true")
+        .config("spark.sql.adaptive.coalescePartitions.enabled", "true")
+        .config("spark.sql.adaptive.skewJoin.enabled", "true")
+        .config("spark.default.parallelism", config.maxConcurrentTasks.toString)
+        .config("spark.sql.shuffle.partitions", config.maxConcurrentTasks.toString)
+        
+        // Network and timeout settings for large tasks
+        .config("spark.network.timeout", "800s")
+        .config("spark.executor.heartbeatInterval", "60s")
+        .config("spark.rpc.askTimeout", "600s")
+        .config("spark.rpc.lookupTimeout", "600s")
+        
+        // Compression and storage
+        .config("spark.rdd.compress", "true")
+        .config("spark.broadcast.compress", "true")
+        .config("spark.io.compression.codec", "snappy")
+        .config("spark.storage.level", config.solutionCacheLevel)
+        
+        // Prevent large task serialization
+        .config("spark.task.maxDirectResultSize", "1048576")  // 1MB max direct result
+        .config("spark.rpc.message.maxSize", "512")  // 512MB max RPC message
       
       // Try to enable Hive support if available, otherwise continue without it
       val finalBuilder = Try {
@@ -489,29 +557,85 @@ class CampaignSchedulingOptimizer {
     println(s"  Master: ${spark.sparkContext.master}")
     println(s"  Default parallelism: ${spark.sparkContext.defaultParallelism}")
     println(s"  Deploy mode: ${spark.sparkContext.deployMode}")
+    println(s"  Kryo buffer max: ${spark.conf.get("spark.kryoserializer.buffer.max")}")
     
     spark
   }
   
-  private def loadCustomerData(config: OptimizationConfig, spark: SparkSession): Array[Customer] = {
-    // In production, this would load from a distributed data source
-    // For demo, we generate synthetic data
+  private def loadCustomerDataOptimized(config: OptimizationConfig, spark: SparkSession): Array[Customer] = {
+    import spark.implicits._
     
-    println(s"Generating ${config.numCustomersDemo} synthetic customers...")
+    println(s"Generating ${config.numCustomersDemo} customers with memory-optimized processing...")
     
-    // Generate customers with realistic patterns
-    val customers = Customer.generateRandomCustomers(
-      numCustomers = config.numCustomersDemo,
-      seed = 42L
-    )
+    // CRITICAL: Use much smaller batch sizes to prevent large task serialization
+    val safeBatchSize = Math.min(config.customerBatchSize, 10000) // Max 10K per batch
+    val numBatches = (config.numCustomersDemo + safeBatchSize - 1) / safeBatchSize
     
-    // In production, you might want to use Spark DataFrames for processing:
-    // val customerDF = spark.createDataFrame(customers.map(c => (c.id, c.responseRates.flatten)))
-    // customerDF.cache() // Cache for repeated access
+    println(s"Processing in ${numBatches} batches of ${safeBatchSize} customers each")
     
-    println(s"Generated ${customers.length} customers with response rate data")
+    // Generate customers in sequential batches to control memory
+    val customers = (0 until numBatches).flatMap { batchIndex =>
+      val startId = batchIndex * safeBatchSize
+      val endId = Math.min(startId + safeBatchSize, config.numCustomersDemo)
+      
+      println(s"Generating batch ${batchIndex + 1}/${numBatches}: customers ${startId} to ${endId-1}")
+      
+      val batchCustomers = Customer.generateRandomCustomers(
+        numCustomers = endId - startId,
+        seed = 42L + batchIndex
+      )
+      
+      // Process batch immediately to avoid memory accumulation
+      batchCustomers
+    }.toArray
+    
+    println(s"Generated ${customers.length} customers successfully")
+    
+    // Store customer metadata in Spark for distributed access (but not the full objects)
+    storeCustomerMetadata(customers, spark)
     
     customers
+  }
+  
+  private def storeCustomerMetadata(customers: Array[Customer], spark: SparkSession): Unit = {
+    import spark.implicits._
+    
+    try {
+      // Store only essential metadata, not full customer objects
+      val customerMetadata = customers.map { c =>
+        (c.id, c.arpu, c.tier, c.lifetimeValue, c.getBusinessPriority)
+      }.toSeq.toDF("id", "arpu", "tier", "ltv", "businessPriority")
+      
+      // Cache metadata for fast lookups
+      customerMetadata.cache()
+      customerMetadata.count() // Force caching
+      customerMetadata.createOrReplaceTempView("customer_metadata")
+      
+      println(s"Cached metadata for ${customerMetadata.count()} customers")
+      
+    } catch {
+      case e: Exception =>
+        println(s"Warning: Failed to cache customer metadata: ${e.getMessage}")
+        // Continue without caching - not critical for operation
+    }
+  }
+  
+  private def optimizeCustomerData(customers: Array[Customer], spark: SparkSession): Unit = {
+    import spark.implicits._
+    
+    // Convert to more memory-efficient format
+    val customerDF = customers.toSeq.toDF()
+    customerDF.cache()
+    customerDF.createOrReplaceTempView("customers")
+    
+    // Pre-compute business priorities to avoid repeated calculations
+    spark.sql("""
+      SELECT id, arpu, tier, lifetimeValue,
+             (LEAST(2.0, arpu / 50.0) * 0.5 + 
+              CASE tier WHEN 3 THEN 1.5 WHEN 2 THEN 1.0 ELSE 0.7 END * 0.3 + 
+              LEAST(2.0, lifetimeValue / 600.0) * 0.2) as businessPriority
+      FROM customers
+    """).createOrReplaceTempView("customer_priorities")
   }
   
   private def createNSGAII(

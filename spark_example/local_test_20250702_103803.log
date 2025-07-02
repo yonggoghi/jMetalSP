@@ -1,0 +1,412 @@
+Starting optimization with configuration: OptimizationConfig(20,500,0.9,20.0,20.0,5000,1000,50000.0,0.3,None,false,1000,MEMORY_AND_DISK_SER,25,8)
+25/07/02 10:38:05 INFO HiveConf: Found configuration file null
+  Hive support enabled
+25/07/02 10:38:06 INFO SparkContext: Running Spark version 3.5.5
+25/07/02 10:38:06 INFO SparkContext: OS info Mac OS X, 16.0, x86_64
+25/07/02 10:38:06 INFO SparkContext: Java version 1.8.0_292
+25/07/02 10:38:06 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+25/07/02 10:38:06 INFO ResourceUtils: ==============================================================
+25/07/02 10:38:06 INFO ResourceUtils: No custom resources configured for spark.driver.
+25/07/02 10:38:06 INFO ResourceUtils: ==============================================================
+25/07/02 10:38:06 INFO SparkContext: Submitted application: Campaign Scheduling Optimization with jMetalSP
+25/07/02 10:38:06 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memoryOverhead -> name: memoryOverhead, amount: 4096, script: , vendor: , cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 28672, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+25/07/02 10:38:06 INFO ResourceProfile: Limiting resource is cpu
+25/07/02 10:38:06 INFO ResourceProfileManager: Added ResourceProfile id: 0
+25/07/02 10:38:06 INFO SecurityManager: Changing view acls to: 1110566
+25/07/02 10:38:06 INFO SecurityManager: Changing modify acls to: 1110566
+25/07/02 10:38:06 INFO SecurityManager: Changing view acls groups to: 
+25/07/02 10:38:06 INFO SecurityManager: Changing modify acls groups to: 
+25/07/02 10:38:06 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: 1110566; groups with view permissions: EMPTY; users with modify permissions: 1110566; groups with modify permissions: EMPTY
+25/07/02 10:38:06 INFO Utils: Successfully started service 'sparkDriver' on port 52649.
+25/07/02 10:38:06 INFO SparkEnv: Registering MapOutputTracker
+25/07/02 10:38:06 INFO SparkEnv: Registering BlockManagerMaster
+25/07/02 10:38:06 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+25/07/02 10:38:06 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+25/07/02 10:38:06 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+25/07/02 10:38:06 INFO DiskBlockManager: Created local directory at /private/var/folders/0h/3c1x50w901n85pq5kbbn9mn020dh7m/T/blockmgr-703959d9-96ed-42e5-957a-8c2eb3cf3380
+25/07/02 10:38:06 INFO MemoryStore: MemoryStore started with capacity 4.6 GiB
+25/07/02 10:38:06 INFO SparkEnv: Registering OutputCommitCoordinator
+25/07/02 10:38:07 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+25/07/02 10:38:07 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+25/07/02 10:38:07 INFO SparkContext: Added JAR file:/Users/1110566/workspace/jMetalSP/spark_example/target/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar at spark://172.23.113.0:52649/jars/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar with timestamp 1751420286136
+25/07/02 10:38:07 INFO Executor: Starting executor ID driver on host 172.23.113.0
+25/07/02 10:38:07 INFO Executor: OS info Mac OS X, 16.0, x86_64
+25/07/02 10:38:07 INFO Executor: Java version 1.8.0_292
+25/07/02 10:38:07 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+25/07/02 10:38:07 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@213bd3d5 for default.
+25/07/02 10:38:07 INFO Executor: Fetching spark://172.23.113.0:52649/jars/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar with timestamp 1751420286136
+25/07/02 10:38:07 INFO TransportClientFactory: Successfully created connection to /172.23.113.0:52649 after 32 ms (0 ms spent in bootstraps)
+25/07/02 10:38:07 INFO Utils: Fetching spark://172.23.113.0:52649/jars/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar to /private/var/folders/0h/3c1x50w901n85pq5kbbn9mn020dh7m/T/spark-a80669e9-d021-4ded-9496-1d7943964ceb/userFiles-07ec9b57-ec5c-411c-8be0-74ed47b6adb4/fetchFileTemp7257100675199268511.tmp
+25/07/02 10:38:07 INFO Executor: Adding file:/private/var/folders/0h/3c1x50w901n85pq5kbbn9mn020dh7m/T/spark-a80669e9-d021-4ded-9496-1d7943964ceb/userFiles-07ec9b57-ec5c-411c-8be0-74ed47b6adb4/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar to class loader default
+25/07/02 10:38:07 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 52651.
+25/07/02 10:38:07 INFO NettyBlockTransferService: Server created on 172.23.113.0:52651
+25/07/02 10:38:07 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+25/07/02 10:38:07 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 172.23.113.0, 52651, None)
+25/07/02 10:38:07 INFO BlockManagerMasterEndpoint: Registering block manager 172.23.113.0:52651 with 4.6 GiB RAM, BlockManagerId(driver, 172.23.113.0, 52651, None)
+25/07/02 10:38:07 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 172.23.113.0, 52651, None)
+25/07/02 10:38:07 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 172.23.113.0, 52651, None)
+Spark session initialized:
+  Spark version: 3.5.5
+  Master: local[*]
+  Default parallelism: 8
+  Deploy mode: client
+  Kryo buffer max: 2047m
+=== Campaign Message Scheduling Optimization ===
+Configuration: OptimizationConfig(20,500,0.9,20.0,20.0,5000,1000,50000.0,0.3,None,false,1000,MEMORY_AND_DISK_SER,25,8)
+==================================================
+Step 1: Loading customer data...
+Generating 5000 customers with memory-optimized processing...
+Processing in 5 batches of 1000 customers each
+Generating batch 1/5: customers 0 to 999
+Generating batch 2/5: customers 1000 to 1999
+Generating batch 3/5: customers 2000 to 2999
+Generating batch 4/5: customers 3000 to 3999
+Generating batch 5/5: customers 4000 to 4999
+Generated 5000 customers successfully
+Cached metadata for 5000 customers
+Customer Statistics:
+  Total customers: 5000
+  Average response rates by channel:
+    Channel 0 (Email): 10.939538861399324%
+    Channel 1 (SMS): 14.886935847236968%
+    Channel 2 (Push): 13.836951907082518%
+    Channel 3 (In-app): 6.88875593750366%
+  Business value metrics:
+    Average ARPU: $56.220872697431965%.2f/month
+    Average LTV: $1012.3317081048527%.2f
+    Average conversion value: $28.098633822857835%.2f
+  Customer tiers:
+    Premium (727 customers): 14.54%.1f%%
+    Standard (2828 customers): 56.56%.1f%%
+    Basic (1445 customers): 28.9%.1f%%
+  Total possible contacts: 1200000
+
+Step 2: Creating optimization problem...
+Problem Statistics:
+  Total customers: 5000
+  Campaign duration: 168 hours (7 days)
+  Available channels: 4
+  Max customers per hour: 1000
+  Campaign budget: $50000.00
+  Business priority threshold: 0.30
+  Average customer priority: 1.084
+  High priority customers (>1.0): 2723
+  Average customer ARPU: $56.22/month
+  Max theoretical hourly load: 5000
+  Budget utilization if all assigned: 0.5%
+
+Step 3: Configuring NSGA-II algorithm...
+
+Step 4: Running optimization...
+Population size: 20
+Max evaluations: 500
+25/07/02 10:38:20 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:20 WARN TaskSetManager: Stage 7 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:27 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:27 WARN TaskSetManager: Stage 8 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:31 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:31 WARN TaskSetManager: Stage 9 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:34 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:34 WARN TaskSetManager: Stage 10 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:38 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:38 WARN TaskSetManager: Stage 11 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:43 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:43 WARN TaskSetManager: Stage 12 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:47 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:47 WARN TaskSetManager: Stage 13 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:38:55 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:38:55 WARN TaskSetManager: Stage 14 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:00 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:00 WARN TaskSetManager: Stage 15 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:03 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:03 WARN TaskSetManager: Stage 16 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:06 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:06 WARN TaskSetManager: Stage 17 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:09 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:09 WARN TaskSetManager: Stage 18 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:13 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:14 WARN TaskSetManager: Stage 19 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:19 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:19 WARN TaskSetManager: Stage 20 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:22 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:22 WARN TaskSetManager: Stage 21 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:25 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:25 WARN TaskSetManager: Stage 22 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:30 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:30 WARN TaskSetManager: Stage 23 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:33 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:33 WARN TaskSetManager: Stage 24 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:36 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:37 WARN TaskSetManager: Stage 25 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:42 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:42 WARN TaskSetManager: Stage 26 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:47 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:47 WARN TaskSetManager: Stage 27 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:53 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:53 WARN TaskSetManager: Stage 28 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:56 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:56 WARN TaskSetManager: Stage 29 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:39:59 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:39:59 WARN TaskSetManager: Stage 30 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+25/07/02 10:40:05 WARN DAGScheduler: Broadcasting large task binary with size 34.9 MiB
+25/07/02 10:40:05 WARN TaskSetManager: Stage 31 contains a task of very large size (57171 KiB). The maximum recommended task size is 1000 KiB.
+
+Optimization completed in 108287ms
+Found 3 solutions on the Pareto front
+
+Step 5: Analyzing results...
+Analyzing 3 solutions...
+
+=== BEST SOLUTIONS ANALYSIS ===
+Best Response Rate Solution:
+  Expected responses: 576.16
+  ARPU-weighted value: $40131.62
+  Total cost: $462.15
+  All constraints satisfied
+  Utilization: 85.6%
+  Max hourly load: 37
+
+=== BEST RESPONSE RATE SCHEDULE ===
+
+=== ASSIGNMENT ANALYSIS ===
+Total customers: 5000
+Business priority threshold filtered out: 1631
+Contact constraint (48h) filtered out: 0
+Hourly capacity constraint filtered out: 0
+Successfully assigned: 3369
+Max customers per hour setting: 1000
+Campaign budget setting: 50000.0
+
+=== BUSINESS PRIORITY DISTRIBUTION ===
+Average customer business priority: 1.084
+Min business priority: 0.281
+Max business priority: 1.850
+High-value customers (priority > 1.0): 2723
+Business priority threshold: 0.30
+
+Schedule contains 3369 customer assignments:
+CustomerID	TimeSlot	Channel	ExpectedResponse	Cost	Priority
+--------------------------------------------------------------------------------
+         0	     101	   Push	          0.048	$0.05	   0.419
+         1	     101	    SMS	          0.087	$0.25	   0.637
+         2	     104	   Push	          0.439	$0.05	   0.320
+         3	      89	   Push	          0.141	$0.05	   0.355
+         5	     143	   Push	          0.145	$0.05	   1.031
+         6	      59	    SMS	          0.020	$0.25	   0.502
+         8	     107	   Push	          0.176	$0.05	   0.839
+         9	       6	  Email	          0.011	$0.10	   0.938
+        11	     107	   Push	          0.202	$0.05	   0.304
+        15	     144	  Email	          0.009	$0.10	   0.797
+        16	      90	  Email	          0.535	$0.10	   0.642
+        18	      99	    SMS	          0.113	$0.25	   0.833
+        22	      29	 In-app	          0.028	$0.15	   1.509
+        25	     107	    SMS	          0.595	$0.25	   0.919
+        26	      59	    SMS	          0.193	$0.25	   0.522
+        27	      99	   Push	          0.042	$0.05	   0.582
+        28	     139	 In-app	          0.012	$0.15	   0.660
+        29	      14	  Email	          0.015	$0.10	   0.670
+        32	      93	    SMS	          0.372	$0.25	   1.646
+        34	      95	  Email	          0.032	$0.10	   0.337
+... and 3349 more assignments
+
+Hourly Load Distribution (first 24 hours):
+Hour	Assignments	Capacity
+------------------------------
+   0	          5	    1000
+   1	         14	    1000
+   2	         19	    1000
+   3	         18	    1000
+   4	         24	    1000
+   5	         18	    1000
+   6	         17	    1000
+   7	         24	    1000
+   8	         21	    1000
+   9	         18	    1000
+  10	         28	    1000
+  11	         14	    1000
+  12	         17	    1000
+  13	         14	    1000
+  14	         14	    1000
+  15	         20	    1000
+  16	         23	    1000
+  17	         21	    1000
+  18	         25	    1000
+  19	         17	    1000
+  20	         29	    1000
+  21	         21	    1000
+  22	         19	    1000
+  23	         13	    1000
+
+Channel Distribution:
+Channel	Assignments
+--------------------
+  Email	        836
+    SMS	        863
+   Push	        877
+ In-app	        793
+
+=== RECOMMENDATIONS ===
+
+Best ARPU-Weighted Value Solution:
+  Expected responses: 566.18
+  ARPU-weighted value: $40616.83
+  Total cost: $471.55
+  All constraints satisfied
+  Utilization: 85.7%
+  Max hourly load: 32
+
+=== BEST ARPU-WEIGHTED VALUE SCHEDULE ===
+
+=== ASSIGNMENT ANALYSIS ===
+Total customers: 5000
+Business priority threshold filtered out: 1617
+Contact constraint (48h) filtered out: 0
+Hourly capacity constraint filtered out: 0
+Successfully assigned: 3383
+Max customers per hour setting: 1000
+Campaign budget setting: 50000.0
+
+=== BUSINESS PRIORITY DISTRIBUTION ===
+Average customer business priority: 1.084
+Min business priority: 0.281
+Max business priority: 1.850
+High-value customers (priority > 1.0): 2723
+Business priority threshold: 0.30
+
+Schedule contains 3383 customer assignments:
+CustomerID	TimeSlot	Channel	ExpectedResponse	Cost	Priority
+--------------------------------------------------------------------------------
+         0	      84	   Push	          0.199	$0.05	   0.421
+         1	     102	    SMS	          0.067	$0.25	   0.637
+         2	       6	    SMS	          0.101	$0.25	   0.318
+         3	      86	   Push	          0.105	$0.05	   0.354
+         5	     138	   Push	          0.409	$0.05	   1.032
+         6	      41	    SMS	          0.023	$0.25	   0.502
+         8	     107	   Push	          0.176	$0.05	   0.836
+        11	      10	   Push	          0.380	$0.05	   0.304
+        15	     144	  Email	          0.009	$0.10	   0.340
+        16	      87	    SMS	          0.030	$0.25	   1.214
+        17	      39	 In-app	          0.047	$0.15	   0.732
+        18	      97	    SMS	          0.116	$0.25	   1.244
+        22	     143	 In-app	          0.019	$0.15	   1.494
+        25	      21	    SMS	          0.231	$0.25	   0.813
+        26	      59	    SMS	          0.193	$0.25	   0.517
+        27	      23	   Push	          0.121	$0.05	   0.582
+        28	     139	 In-app	          0.012	$0.15	   0.748
+        29	     152	  Email	          0.155	$0.10	   0.697
+        32	      95	    SMS	          0.181	$0.25	   1.630
+        33	     128	   Push	          0.106	$0.05	   0.684
+... and 3363 more assignments
+
+Hourly Load Distribution (first 24 hours):
+Hour	Assignments	Capacity
+------------------------------
+   0	         10	    1000
+   1	          8	    1000
+   2	         19	    1000
+   3	         18	    1000
+   4	         23	    1000
+   5	         23	    1000
+   6	         24	    1000
+   7	         18	    1000
+   8	         22	    1000
+   9	         20	    1000
+  10	         22	    1000
+  11	         20	    1000
+  12	         19	    1000
+  13	         23	    1000
+  14	         22	    1000
+  15	         25	    1000
+  16	         21	    1000
+  17	         13	    1000
+  18	         20	    1000
+  19	         20	    1000
+  20	         15	    1000
+  21	         19	    1000
+  22	         26	    1000
+  23	         17	    1000
+
+Channel Distribution:
+Channel	Assignments
+--------------------
+  Email	        778
+    SMS	        895
+   Push	        865
+ In-app	        845
+
+=== RECOMMENDATIONS ===
+
+=== SOLUTION STATISTICS ===
+Response Rate Range: 566.18 - 576.16
+ARPU-Weighted Value Range: $40131.62 - $40616.83
+Cost Range: $462.15 - $471.55
+
+=== AVERAGE VALUES ===
+Average Response Rate: 571.00
+Average ARPU-Weighted Value: $40404.03
+Average Cost: $467.27
+Cost per Response: $0.82
+Value per Response: $70.76
+ROI (Value/Cost): 86.47x
+
+=== PARETO FRONT ANALYSIS ===
+Solutions span 3 different trade-offs
+Response rate diversity: 1.7%
+ARPU-weighted value diversity: 1.2%
+
+Step 6: Saving results...
+HDFS not configured (fs.defaultFS not set to hdfs://)
+Schedule saved locally as CSV: best_response_20250702_104007.csv
+HDFS not configured (fs.defaultFS not set to hdfs://)
+Schedule saved locally as CSV: best_arpu_value_20250702_104007.csv
+HDFS not configured (fs.defaultFS not set to hdfs://)
+Solutions summary saved locally as CSV: solutions_summary_20250702_104007.csv
+Results saved with timestamp: 20250702_104007
+
+============================================================
+OPTIMIZATION RESULTS SUMMARY
+============================================================
+Execution time: 108287ms
+Solutions found: 3
+
+Problem Statistics:
+  Total customers: 5000
+  Campaign duration: 168 hours (7 days)
+  Available channels: 4
+  Max customers per hour: 1000
+  Campaign budget: $50000.00
+  Business priority threshold: 0.30
+  Average customer priority: 1.084
+  High priority customers (>1.0): 2723
+  Average customer ARPU: $56.22/month
+  Max theoretical hourly load: 5000
+  Budget utilization if all assigned: 0.5%
+
+Customer Statistics:
+  Total customers: 5000
+  Average response rates by channel:
+    Channel 0 (Email): 10.939538861399324%
+    Channel 1 (SMS): 14.886935847236968%
+    Channel 2 (Push): 13.836951907082518%
+    Channel 3 (In-app): 6.88875593750366%
+  Business value metrics:
+    Average ARPU: $56.220872697431965%.2f/month
+    Average LTV: $1012.3317081048527%.2f
+    Average conversion value: $28.098633822857835%.2f
+  Customer tiers:
+    Premium (727 customers): 14.54%.1f%%
+    Standard (2828 customers): 56.56%.1f%%
+    Basic (1445 customers): 28.9%.1f%%
+  Total possible contacts: 1200000
+
+=== RECOMMENDATIONS ===
+1. Review the Pareto front in FUN_campaign_*.tsv
+2. Select solution based on business priorities
+3. Implement the schedule using VAR_campaign_*.tsv
+4. Monitor actual response rates vs. predictions
+5. Retrain models with new data periodically
+
+============================================================
+
+Spark session stopped.
+=== OPTIMIZATION COMPLETED SUCCESSFULLY ===
