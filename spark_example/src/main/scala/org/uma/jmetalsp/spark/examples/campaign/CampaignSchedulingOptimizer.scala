@@ -260,7 +260,13 @@ class CampaignSchedulingOptimizer {
     customerStats: CustomerStatistics
   )
   
-
+  // Instead of sending full Customer objects, send only essential data
+  case class CustomerEssentials(
+    id: Long,
+    arpu: Double,
+    tier: Int,
+    lifetimeValue: Double
+  )
   
   /**
    * Main optimization method that accepts an existing SparkSession
@@ -280,6 +286,9 @@ class CampaignSchedulingOptimizer {
     val customers = loadCustomerDataOptimized(config, spark)
     val customerStats = Customer.getStatistics(customers)
     println(customerStats)
+    
+    // Broadcast customer data to all executors once
+    val broadcastCustomers = sparkContext.broadcast(customers)
     
     // Step 2: Create optimization problem
     println("\nStep 2: Creating optimization problem...")
