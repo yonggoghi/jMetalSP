@@ -11,7 +11,7 @@ cd "$PROJECT_DIR"
 
 # Configuration
 MAIN_CLASS="org.uma.jmetalsp.spark.examples.campaign.CampaignSchedulingOptimizer"
-JAR_NAME="jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar"
+JAR_NAME="jmetalsp-spark-scheduler-2.1-SNAPSHOT-jar-with-dependencies.jar"
 SPARK_MASTER="local[4]"
 
 # Colors for output
