@@ -11,9 +11,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>jmetalsp-spark-example</artifactId>
+    <artifactId>jmetalsp-spark-scheduler</artifactId>
     <packaging>jar</packaging>
-    <name>jMetalSP Spark Campaign Scheduling Example</name>
+    <name>jMetalSP Spark Campaign Scheduling</name>
     <description>Campaign message scheduling optimization using jMetalSP with Spark 3.1.x</description>
 
     <properties>
