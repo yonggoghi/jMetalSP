@@ -34,14 +34,16 @@ object SimpleCampaignOptimizer {
     println("=== Simple Campaign Scheduling Optimizer ===")
     
     val useSparkMode = args.contains("--spark") || args.contains("-s")
+    val saveResults = !args.contains("--no-save-results") && 
+                      !(args.contains("--save-results") && args.indexOf("--save-results") + 1 < args.length && args(args.indexOf("--save-results") + 1) == "false")
     
     Try {
       if (useSparkMode) {
         println("Running with Spark support...")
-        runSparkOptimizationStandalone()
+        runSparkOptimizationStandalone(saveResults)
       } else {
         println("Running without Spark (pure jMetal)...")
-        runSimpleOptimization()
+        runSimpleOptimization(saveResults)
       }
     } match {
       case Success(_) =>
@@ -55,21 +57,19 @@ object SimpleCampaignOptimizer {
     }
   }
   
+
+  
   /**
    * Standalone method that creates its own Spark session
    * Only use this for standalone applications
    */
-  def runSparkOptimizationStandalone(): Unit = {
-    
-    // Auto-detect Spark master
-    println("Auto-detecting Spark master...")
-    val detectedMaster = detectSparkMaster()
+  def runSparkOptimizationStandalone(saveResults: Boolean = true): Unit = {
     
     // Create single Spark session for the entire optimization
-    val spark: SparkSession = createSparkSession(detectedMaster)
+    val spark: SparkSession = createSparkSession()
     
     try {
-      runSparkOptimizationWithSession(spark)
+      runSparkOptimizationWithSession(spark, saveResults)
     } finally {
       spark.stop()
     }
@@ -79,7 +79,7 @@ object SimpleCampaignOptimizer {
    * Main Spark optimization method that accepts an existing SparkSession
    * This is the preferred method for Zeppelin or when you already have a Spark session
    */
-  def runSparkOptimizationWithSession(spark: SparkSession): Unit = {
+  def runSparkOptimizationWithSession(spark: SparkSession, saveResults: Boolean = true): Unit = {
     val sc = spark.sparkContext
     
     // Simple configuration for testing
@@ -150,9 +150,13 @@ object SimpleCampaignOptimizer {
     println("\nStep 5: Analyzing results...")
     analyzeSimpleResults(solutions, customers, problem)
     
-    // Step 6: Save results
-    println("\nStep 6: Saving results...")
-    saveSparkResults(solutions, problem, spark)
+    // Step 6: Save results (conditional)
+    if (saveResults) {
+      println("\nStep 6: Saving results...")
+      saveSparkResults(solutions, problem, spark)
+    } else {
+      println("\nStep 6: Skipping result saving (disabled by --no-save-results)")
+    }
     
     println("\n=== SPARK OPTIMIZATION SUMMARY ===")
     printSimpleSummary(solutions, executionTime, customerStats, problemStats)
@@ -161,42 +165,17 @@ object SimpleCampaignOptimizer {
   /**
    * Creates a Spark session for standalone usage
    */
-  def createSparkSession(masterUrl: String): SparkSession = {
-    val builder = SparkSession.builder()
-      .master(masterUrl)
-      .appName("Simple Campaign Scheduling Optimizer")
-      // Add Java compatibility configurations
-      .config("spark.sql.adaptive.enabled", "false") // Disable adaptive query execution for compatibility
-      .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-      .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse") // Set warehouse directory
-    
-    // Try to enable Hive support if available, otherwise continue without it
-    val finalBuilder = Try {
-      builder
+  def createSparkSession(): SparkSession = {
+    val spark: SparkSession = {
+      SparkSession.builder()
+        .appName("SimpleCampaignScheduler")
         .config("spark.hadoop.metastore.catalog.default","hive")
         .enableHiveSupport()
-    } match {
-      case Success(hiveBuilder) =>
-        println("  Hive support enabled")
-        hiveBuilder
-      case Failure(exception) =>
-        println(s"  Hive support not available: ${exception.getMessage}")
-        println("  Continuing without Hive support...")
-        builder
+        .getOrCreate()
     }
     
-    Try {
-      finalBuilder.getOrCreate()
-    } match {
-      case Success(sparkSession) =>
-        println("  Spark session created successfully")
-        sparkSession
-      case Failure(exception) =>
-        println(s"  Failed to create Spark session: ${exception.getMessage}")
-        println("  This might be a Java version compatibility issue.")
-        println("  Try running with Java 8 or 11 for better Spark 3.1.3 compatibility.")
-        throw exception
-    }
+    println("  Spark session created successfully")
+    spark
   }
   
   private def saveSparkResults(solutions: java.util.List[DoubleSolution], problem: CampaignSchedulingProblem, spark: SparkSession): Unit = {
@@ -248,138 +227,9 @@ object SimpleCampaignOptimizer {
     runSparkOptimizationWithSession(spark)
   }
   
-  /**
-   * Automatically detect if YARN is available
-   */
-  private def detectSparkMaster(): String = {
-    // Method 1: Check if YARN ResourceManager is configured (don't rely on localhost connectivity)
-    def isYarnConfigured: Boolean = {
-      // Check if yarn.resourcemanager.hostname is configured
-      val yarnRmHostname = sys.props.get("yarn.resourcemanager.hostname")
-        .orElse(sys.env.get("YARN_RESOURCEMANAGER_HOSTNAME"))
-      
-      // Check if fs.defaultFS points to HDFS (indicates Hadoop cluster)
-      val defaultFS = sys.props.get("fs.defaultFS")
-        .orElse(sys.env.get("HADOOP_DEFAULT_FS"))
-      
-      if (yarnRmHostname.isDefined) {
-        println(s"  YARN ResourceManager hostname configured: ${yarnRmHostname.get}")
-        true
-      } else if (defaultFS.exists(_.startsWith("hdfs://"))) {
-        println(s"  HDFS configured as default filesystem: ${defaultFS.get}")
-        true
-      } else {
-        // Try to read Hadoop configuration files if available
-        val hadoopConfDir = sys.env.get("HADOOP_CONF_DIR")
-        val yarnConfDir = sys.env.get("YARN_CONF_DIR")
-        
-        if (hadoopConfDir.isDefined || yarnConfDir.isDefined) {
-          println(s"  Hadoop configuration directories found")
-          // In a real cluster, configuration files would be present
-          true
-        } else {
-          println("  No YARN configuration found")
-          false
-        }
-      }
-    }
-    
-    // Method 2: Check environment variables (but be conservative)
-    def hasYarnEnvVars: Boolean = {
-      val yarnEnvVars = List(
-        "YARN_CONF_DIR",
-        "HADOOP_CONF_DIR", 
-        "HADOOP_HOME"
-      )
-      
-      val foundVars = yarnEnvVars.filter(sys.env.contains)
-      if (foundVars.nonEmpty) {
-        println(s"  Found YARN environment variables: ${foundVars.mkString(", ")}")
-        true
-      } else {
-        println("  No YARN environment variables found")
-        false
-      }
-    }
-    
-    // Method 3: Check if running in a known cluster environment
-    def isClusterEnvironment: Boolean = {
-      val clusterIndicators = List(
-        "KUBERNETES_SERVICE_HOST", // Kubernetes
-        "MESOS_TASK_ID",           // Mesos
-        "SLURM_JOB_ID"             // SLURM
-      )
-      
-      val foundIndicators = clusterIndicators.filter(sys.env.contains)
-      if (foundIndicators.nonEmpty) {
-        println(s"  Found cluster indicators: ${foundIndicators.mkString(", ")}")
-        true
-      } else {
-        false
-      }
-    }
-    
-    // Method 4: Check command line arguments or system properties
-    def isYarnFromArgs: Boolean = {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      
-      val yarnFromProps = sparkMasterProp.exists(_.contains("yarn"))
-      val yarnFromEnv = sparkMasterEnv.exists(_.contains("yarn"))
-      
-      if (yarnFromProps) println(s"  Spark master from system property: ${sparkMasterProp.get}")
-      if (yarnFromEnv) println(s"  Spark master from environment: ${sparkMasterEnv.get}")
-      
-      yarnFromProps || yarnFromEnv
-    }
-    
-    // Method 5: Check for explicit local mode configuration
-    def isLocalFromArgs: Boolean = {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      
-      val localFromProps = sparkMasterProp.exists(_.startsWith("local"))
-      val localFromEnv = sparkMasterEnv.exists(_.startsWith("local"))
-      
-      if (localFromProps) println(s"  Local mode from system property: ${sparkMasterProp.get}")
-      if (localFromEnv) println(s"  Local mode from environment: ${sparkMasterEnv.get}")
-      
-      localFromProps || localFromEnv
-    }
-    
-    println("Checking cluster environment...")
-    
-    val detectedMaster = if (isYarnFromArgs) {
-      println("  Using YARN from explicit configuration")
-      "yarn"
-    } else if (isLocalFromArgs) {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      val explicitMaster = sparkMasterProp.orElse(sparkMasterEnv).getOrElse("local[*]")
-      println(s"  Using explicit local configuration: $explicitMaster")
-      explicitMaster
-    } else if (hasYarnEnvVars || isYarnConfigured) {
-      println("  YARN environment detected")
-      "yarn"
-    } else if (isClusterEnvironment) {
-      println("  Cluster environment detected, using YARN")
-      "yarn"
-    } else {
-      println("  No cluster environment detected, using local mode")
-      "local[*]"
-    }
-    
-    println(s"Auto-detected Spark master: $detectedMaster")
-    if (detectedMaster == "yarn") {
-      println("  YARN cluster environment detected")
-    } else {
-      println("  Local environment detected - using all available cores")
-    }
-    
-    detectedMaster
-  }
+
   
-  def runSimpleOptimization(): Unit = {
+  def runSimpleOptimization(saveResults: Boolean = true): Unit = {
     
     println("Running simple optimization without Spark overhead...")
     
@@ -447,9 +297,13 @@ object SimpleCampaignOptimizer {
     println("\nStep 5: Analyzing results...")
     analyzeSimpleResults(solutions, customers, problem)
     
-    // Step 6: Save results
-    println("\nStep 6: Saving results...")
-    saveSimpleResults(solutions, problem)
+    // Step 6: Save results (conditional)
+    if (saveResults) {
+      println("\nStep 6: Saving results...")
+      saveSimpleResults(solutions, problem)
+    } else {
+      println("\nStep 6: Skipping result saving (disabled by --no-save-results)")
+    }
     
     println("\n=== SIMPLE OPTIMIZATION SUMMARY ===")
     printSimpleSummary(solutions, executionTime, customerStats, problemStats)

@@ -83,12 +83,13 @@ object CampaignSchedulingOptimizer {
     var maxCustomersPerHour = 500
     var campaignBudget = 50000.0
     var businessPriorityThreshold = 0.3 // Lowered from 0.5 for better utilization
-    var sparkMaster: Option[String] = None
+
     var enableCheckpointing = true
     var customerBatchSize = 50000
     var solutionCacheLevel = "MEMORY_AND_DISK_SER"
     var checkpointInterval = 100
     var maxConcurrentTasks = 800
+    var saveResults = true // Default to saving results
     
     var i = 0
     while (i < args.length) {
@@ -120,9 +121,7 @@ object CampaignSchedulingOptimizer {
         case "--business-priority-threshold" =>
           i += 1
           if (i < args.length) businessPriorityThreshold = args(i).toDouble
-        case "--spark-master" =>
-          i += 1
-          if (i < args.length) sparkMaster = Some(args(i))
+
         case "--disable-checkpointing" =>
           enableCheckpointing = false
         case "--customer-batch-size" =>
@@ -137,6 +136,11 @@ object CampaignSchedulingOptimizer {
         case "--max-concurrent-tasks" =>
           i += 1
           if (i < args.length) maxConcurrentTasks = args(i).toInt
+        case "--save-results" =>
+          i += 1
+          if (i < args.length) saveResults = args(i).toBoolean
+        case "--no-save-results" =>
+          saveResults = false
         case "--help" =>
           printUsage()
           System.exit(0)
@@ -158,12 +162,13 @@ object CampaignSchedulingOptimizer {
       maxCustomersPerHour = maxCustomersPerHour,
       campaignBudget = campaignBudget,
       businessPriorityThreshold = businessPriorityThreshold,
-      sparkMaster = sparkMaster,
+
       enableCheckpointing = enableCheckpointing,
       customerBatchSize = customerBatchSize,
       solutionCacheLevel = solutionCacheLevel,
       checkpointInterval = checkpointInterval,
-      maxConcurrentTasks = maxConcurrentTasks
+      maxConcurrentTasks = maxConcurrentTasks,
+      saveResults = saveResults
     )
   }
   
@@ -180,12 +185,13 @@ object CampaignSchedulingOptimizer {
     println("  --max-customers-per-hour <int>       Max customers per hour capacity (default: 500)")
     println("  --campaign-budget <double>           Campaign budget (default: 50000.0)")
     println("  --business-priority-threshold <double> Business priority threshold (default: 0.3)")
-    println("  --spark-master <string>              Spark master URL (default: auto-detect)")
     println("  --disable-checkpointing              Disable Spark checkpointing")
     println("  --customer-batch-size <int>           Customer batch size (default: 50000)")
     println("  --solution-cache-level <string>       Solution cache level (default: MEMORY_AND_DISK_SER)")
     println("  --checkpoint-interval <int>          Checkpoint interval (default: 100)")
     println("  --max-concurrent-tasks <int>         Maximum concurrent tasks (default: 800)")
+    println("  --save-results <true|false>          Save optimization results to files (default: true)")
+    println("  --no-save-results                    Disable saving results (same as --save-results false)")
     println("  --help                               Show this help message")
     println()
     println("Examples:")
@@ -198,6 +204,10 @@ object CampaignSchedulingOptimizer {
     println("    --max-evaluations 20000 \\")
     println("    --num-customers 5000 \\")
     println("    --campaign-budget 100000")
+    println()
+    println("  # Run without saving results")
+    println("  spark-submit --class CampaignSchedulingOptimizer app.jar \\")
+    println("    --no-save-results")
     println()
     println("  # YARN cluster mode")
     println("  spark-submit --master yarn --deploy-mode cluster \\")
@@ -232,12 +242,13 @@ class CampaignSchedulingOptimizer {
     maxCustomersPerHour: Int = 500, // Scale down for demo
     campaignBudget: Double = 50000.0, // Scale down for demo
     businessPriorityThreshold: Double = 0.3, // ARPU-based business priority threshold
-    sparkMaster: Option[String] = None, // Auto-detect if None
+
     enableCheckpointing: Boolean = true,
     customerBatchSize: Int = 50000,        // Process customers in batches
     solutionCacheLevel: String = "MEMORY_AND_DISK_SER",
     checkpointInterval: Int = 100,         // Checkpoint every 100 generations
-    maxConcurrentTasks: Int = 800          // Match parallelism
+    maxConcurrentTasks: Int = 800,         // Match parallelism
+    saveResults: Boolean = true            // Whether to save results to files
   )
   
   case class OptimizationResults(
@@ -249,136 +260,7 @@ class CampaignSchedulingOptimizer {
     customerStats: CustomerStatistics
   )
   
-  /**
-   * Automatically detect if YARN is available
-   */
-  private def detectSparkMaster(): String = {
-    // Method 1: Check if YARN ResourceManager is configured (don't rely on localhost connectivity)
-    def isYarnConfigured: Boolean = {
-      // Check if yarn.resourcemanager.hostname is configured
-      val yarnRmHostname = sys.props.get("yarn.resourcemanager.hostname")
-        .orElse(sys.env.get("YARN_RESOURCEMANAGER_HOSTNAME"))
-      
-      // Check if fs.defaultFS points to HDFS (indicates Hadoop cluster)
-      val defaultFS = sys.props.get("fs.defaultFS")
-        .orElse(sys.env.get("HADOOP_DEFAULT_FS"))
-      
-      if (yarnRmHostname.isDefined) {
-        println(s"  YARN ResourceManager hostname configured: ${yarnRmHostname.get}")
-        true
-      } else if (defaultFS.exists(_.startsWith("hdfs://"))) {
-        println(s"  HDFS configured as default filesystem: ${defaultFS.get}")
-        true
-      } else {
-        // Try to read Hadoop configuration files if available
-        val hadoopConfDir = sys.env.get("HADOOP_CONF_DIR")
-        val yarnConfDir = sys.env.get("YARN_CONF_DIR")
-        
-        if (hadoopConfDir.isDefined || yarnConfDir.isDefined) {
-          println(s"  Hadoop configuration directories found")
-          // In a real cluster, configuration files would be present
-          true
-        } else {
-          println("  No YARN configuration found")
-          false
-        }
-      }
-    }
-    
-    // Method 2: Check environment variables (but be conservative)
-    def hasYarnEnvVars: Boolean = {
-      val yarnEnvVars = List(
-        "YARN_CONF_DIR",
-        "HADOOP_CONF_DIR", 
-        "HADOOP_HOME"
-      )
-      
-      val foundVars = yarnEnvVars.filter(sys.env.contains)
-      if (foundVars.nonEmpty) {
-        println(s"  Found YARN environment variables: ${foundVars.mkString(", ")}")
-        true
-      } else {
-        println("  No YARN environment variables found")
-        false
-      }
-    }
-    
-    // Method 3: Check if running in a known cluster environment
-    def isClusterEnvironment: Boolean = {
-      val clusterIndicators = List(
-        "KUBERNETES_SERVICE_HOST", // Kubernetes
-        "MESOS_TASK_ID",           // Mesos
-        "SLURM_JOB_ID"             // SLURM
-      )
-      
-      val foundIndicators = clusterIndicators.filter(sys.env.contains)
-      if (foundIndicators.nonEmpty) {
-        println(s"  Found cluster indicators: ${foundIndicators.mkString(", ")}")
-        true
-      } else {
-        false
-      }
-    }
-    
-    // Method 4: Check command line arguments or system properties
-    def isYarnFromArgs: Boolean = {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      
-      val yarnFromProps = sparkMasterProp.exists(_.contains("yarn"))
-      val yarnFromEnv = sparkMasterEnv.exists(_.contains("yarn"))
-      
-      if (yarnFromProps) println(s"  Spark master from system property: ${sparkMasterProp.get}")
-      if (yarnFromEnv) println(s"  Spark master from environment: ${sparkMasterEnv.get}")
-      
-      yarnFromProps || yarnFromEnv
-    }
-    
-    // Method 5: Check for explicit local mode configuration
-    def isLocalFromArgs: Boolean = {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      
-      val localFromProps = sparkMasterProp.exists(_.startsWith("local"))
-      val localFromEnv = sparkMasterEnv.exists(_.startsWith("local"))
-      
-      if (localFromProps) println(s"  Local mode from system property: ${sparkMasterProp.get}")
-      if (localFromEnv) println(s"  Local mode from environment: ${sparkMasterEnv.get}")
-      
-      localFromProps || localFromEnv
-    }
-    
-    println("Checking cluster environment...")
-    
-    val detectedMaster = if (isYarnFromArgs) {
-      println("  Using YARN from explicit configuration")
-      "yarn"
-    } else if (isLocalFromArgs) {
-      val sparkMasterProp = sys.props.get("spark.master")
-      val sparkMasterEnv = sys.env.get("SPARK_MASTER")
-      val explicitMaster = sparkMasterProp.orElse(sparkMasterEnv).getOrElse("local[*]")
-      println(s"  Using explicit local configuration: $explicitMaster")
-      explicitMaster
-    } else if (hasYarnEnvVars || isYarnConfigured) {
-      println("  YARN environment detected")
-      "yarn"
-    } else if (isClusterEnvironment) {
-      println("  Cluster environment detected, using YARN")
-      "yarn"
-    } else {
-      println("  No cluster environment detected, using local mode")
-      "local[*]"
-    }
-    
-    println(s"Auto-detected Spark master: $detectedMaster")
-    if (detectedMaster == "yarn") {
-      println("  YARN cluster environment detected")
-    } else {
-      println("  Local environment detected - using all available cores")
-    }
-    
-    detectedMaster
-  }
+
   
   /**
    * Main optimization method that accepts an existing SparkSession
@@ -430,9 +312,13 @@ class CampaignSchedulingOptimizer {
     println("\nStep 5: Analyzing results...")
     val (schedules, metrics) = analyzeResults(problem, solutions)
     
-    // Step 6: Save results
-    println("\nStep 6: Saving results...")
-    saveResults(solutions, schedules, problem, spark)
+    // Step 6: Save results (conditional)
+    if (config.saveResults) {
+      println("\nStep 6: Saving results...")
+      saveResults(solutions, schedules, problem, spark)
+    } else {
+      println("\nStep 6: Skipping result saving (disabled by --no-save-results)")
+    }
     
     OptimizationResults(
       bestSolutions = solutions.asScala.toList,
@@ -444,112 +330,21 @@ class CampaignSchedulingOptimizer {
     )
   }
   
-  /**
-   * Legacy optimization method that creates its own Spark session
-   * Only use this for standalone applications
-   */
-  def optimize(config: OptimizationConfig = OptimizationConfig()): OptimizationResults = {
-    
-    println("=== Campaign Message Scheduling Optimization ===")
-    
-    // Auto-detect Spark master if not specified
-    val finalConfig = config.sparkMaster match {
-      case Some(master) => 
-        println(s"Using specified Spark master: $master")
-        config
-      case None => 
-        println("Auto-detecting Spark master...")
-        val detectedMaster = detectSparkMaster()
-        config.copy(sparkMaster = Some(detectedMaster))
-    }
-    
-    // Initialize Spark
-    val spark = createSparkSession(finalConfig)
-    
-    try {
-      optimizeWithSpark(spark, finalConfig)
-    } finally {
-      spark.stop()
-      println("\nSpark session stopped.")
-    }
-  }
+
   
   private def createSparkSession(config: OptimizationConfig): SparkSession = {
-    val masterUrl = config.sparkMaster.getOrElse("local[*]")
-    
     val spark: SparkSession = {
-      val builder = SparkSession.builder()
-        .appName("Campaign Scheduling Optimization with jMetalSP")
-        .master(masterUrl)
-        // CRITICAL: Memory and serialization optimizations for large tasks
-        .config("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-        .config("spark.kryo.registrationRequired", "false")
-        .config("spark.kryo.unsafe", "true")
-        .config("spark.kryo.referenceTracking", "false")
-        .config("spark.kryoserializer.buffer.max", "2047m")  // Must be < 2048MB
-        .config("spark.kryoserializer.buffer", "256m")
-        .config("spark.serializer.objectStreamReset", "100")
-        
-        // Memory management for large datasets
-        .config("spark.executor.memory", "28g")
-        .config("spark.executor.memoryFraction", "0.8")
-        .config("spark.executor.memoryOverhead", "4g")
-        .config("spark.driver.memory", "8g")
-        .config("spark.driver.memoryOverhead", "2g")
-        .config("spark.driver.maxResultSize", "4g")
-        
-        // Task and shuffle optimizations
-        .config("spark.sql.execution.arrow.maxRecordsPerBatch", "1000")
-        .config("spark.sql.adaptive.enabled", "true")
-        .config("spark.sql.adaptive.coalescePartitions.enabled", "true")
-        .config("spark.sql.adaptive.skewJoin.enabled", "true")
-        .config("spark.default.parallelism", config.maxConcurrentTasks.toString)
-        .config("spark.sql.shuffle.partitions", config.maxConcurrentTasks.toString)
-        
-        // Network and timeout settings for large tasks
-        .config("spark.network.timeout", "800s")
-        .config("spark.executor.heartbeatInterval", "60s")
-        .config("spark.rpc.askTimeout", "600s")
-        .config("spark.rpc.lookupTimeout", "600s")
-        
-        // Compression and storage
-        .config("spark.rdd.compress", "true")
-        .config("spark.broadcast.compress", "true")
-        .config("spark.io.compression.codec", "snappy")
-        .config("spark.storage.level", config.solutionCacheLevel)
-        
-        // Prevent large task serialization
-        .config("spark.task.maxDirectResultSize", "1048576")  // 1MB max direct result
-        .config("spark.rpc.message.maxSize", "512")  // 512MB max RPC message
-      
-      // Try to enable Hive support if available, otherwise continue without it
-      val finalBuilder = Try {
-        builder
-          .config("spark.hadoop.metastore.catalog.default","hive")
-          .enableHiveSupport()
-      } match {
-        case Success(hiveBuilder) =>
-          println("  Hive support enabled")
-          hiveBuilder
-        case Failure(exception) =>
-          println(s"  Hive support not available: ${exception.getMessage}")
-          println("  Continuing without Hive support...")
-          builder
-      }
-      
-      finalBuilder.getOrCreate()
+      SparkSession.builder()
+        .appName("CampaignScheduler")
+        .config("spark.hadoop.metastore.catalog.default","hive")
+        .enableHiveSupport()
+        .getOrCreate()
     }
 
-    val sc = spark.sparkContext
     spark.sparkContext.setLogLevel("WARN")
     
     if (config.enableCheckpointing) {
-      val checkpointDir = if (masterUrl.contains("yarn")) {
-        "/tmp/spark-checkpoint-yarn"
-      } else {
-        "/tmp/spark-checkpoint-local"
-      }
-      spark.sparkContext.setCheckpointDir(checkpointDir)
+      spark.sparkContext.setCheckpointDir("/tmp/spark-checkpoint")
     }
     
     println("Spark session initialized:")
@@ -557,7 +352,6 @@ class CampaignSchedulingOptimizer {
     println(s"  Master: ${spark.sparkContext.master}")
     println(s"  Default parallelism: ${spark.sparkContext.defaultParallelism}")
     println(s"  Deploy mode: ${spark.sparkContext.deployMode}")
-    println(s"  Kryo buffer max: ${spark.conf.get("spark.kryoserializer.buffer.max")}")
     
     spark
   }
@@ -1212,26 +1006,7 @@ class CampaignSchedulingOptimizer {
     optimizeWithSpark(spark, config)
   }
   
-  /**
-   * Helper method to manually specify Spark master (for testing)
-   * Creates its own Spark session
-   */
-  def optimizeWithMaster(
-    sparkMaster: String,
-    numCustomers: Int = 1000,
-    populationSize: Int = 50,
-    maxEvaluations: Int = 2000
-  ): OptimizationResults = {
-    
-    val config = OptimizationConfig(
-      numCustomersDemo = numCustomers,
-      populationSize = populationSize,
-      maxEvaluations = maxEvaluations,
-      sparkMaster = Some(sparkMaster)
-    )
-    
-    optimize(config)
-  }
+
 }
 
 /**
