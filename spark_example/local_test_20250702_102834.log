@@ -1,4 +1,0 @@
-25/07/02 10:28:36 WARN DependencyUtils: Local jar /Users/1110566/workspace/jMetalSP/spark_example/target/jmetalsp-spark-example-2.1-SNAPSHOT-jar-with-dependencies.jar does not exist, skipping.
-Error: Failed to load class org.uma.jmetalsp.spark.examples.campaign.CampaignSchedulingOptimizer.
-25/07/02 10:28:36 INFO ShutdownHookManager: Shutdown hook called
-25/07/02 10:28:36 INFO ShutdownHookManager: Deleting directory /private/var/folders/0h/3c1x50w901n85pq5kbbn9mn020dh7m/T/spark-ac331a47-976e-4a77-aa68-e23746aac533
